@@ -1,33 +1,33 @@
-# Khám phá Claude Code — Tiếng Việt
+# Sổ tay Claude Code
 
-Hướng dẫn Claude Code bằng tiếng Việt, dạng HTML tĩnh **không có JavaScript**. Mỗi file và thư mục ở thanh bên là một khái niệm thật của Claude Code, bám theo cấu trúc trong [Claude Code docs](https://code.claude.com/docs/en/claude-directory). Mở thẳng `index.html` là xem được, không cần web server.
+Hướng dẫn Claude Code bằng tiếng Việt, dạng HTML tĩnh **không có JavaScript**. Mở thẳng `index.html` là xem được, không cần web server.
+
+- **Hướng dẫn**: bài viết theo danh mục: Bắt đầu, Kiến trúc, Tư duy, Mẹo & thủ thuật, và nhật ký Có gì mới
+- **Tham chiếu**: mô phỏng một dự án thật; mỗi file và thư mục là một khái niệm của Claude Code, bám theo [Claude Code docs](https://code.claude.com/docs/en/claude-directory)
+
+> Trang chia sẻ cá nhân, không phải tài liệu chính thức của Anthropic.
 
 ## Cấu trúc thư mục
 
 ```
-index.html          Trang chào mừng
-assets/             style.css, favicon.png
-project/            File ở gốc dự án: CLAUDE.md, CLAUDE.local.md, AGENTS.md,
-                    .mcp.json, .worktreeinclude, src/index.ts
-claude/             Hệ sinh thái .claude/ của dự án
-  settings.html, settings-local.html, agent-memory.html
-  rules/ skills/ agents/ commands/ hooks/ output-styles/ workflows/ plugins/ mods/
-built-in/           Tính năng có sẵn của Claude Code
-  auto-memory.html
-  modes/ context/ keyboard/ cli/ bundled-skills/ commands/
-global/             Máy của bạn: ~/.claude, ~/.claude.json, managed settings,
-                    keybindings, theme, dữ liệu ứng dụng
+index.html          Trang chủ
+changelog.html      Nhật ký cập nhật (Có gì mới)
+assets/             style.css, favicon (svg, png), apple-touch-icon
+getting-started/    Hướng dẫn: Bắt đầu        (index.html = tổng quan danh mục)
+architecture/       Hướng dẫn: Kiến trúc
+mindset/            Hướng dẫn: Tư duy
+tips/               Hướng dẫn: Mẹo & thủ thuật
+project/            Tham chiếu: file ở gốc dự án (CLAUDE.md, AGENTS.md, .mcp.json…)
+claude/             Tham chiếu: hệ sinh thái .claude/ của dự án
+built-in/           Tham chiếu: tính năng có sẵn của Claude Code
+global/             Tham chiếu: máy của bạn (~/.claude, managed settings…)
 ```
 
-Quy ước:
-
-- Mỗi chủ đề là một thư mục; trang tổng quan của chủ đề là `index.html` trong thư mục đó.
-- Trang con là file `.html` cùng cấp, đặt tên theo thuật ngữ trong Claude Code docs (`plan-mode.html`, `code-review.html`…).
-- Mọi liên kết đều tương đối, nên site chạy được ở bất kỳ đường dẫn nào.
+Quy ước: mỗi chủ đề là một thư mục, trang tổng quan là `index.html` trong thư mục đó; tên file và thư mục bằng tiếng Anh; mọi liên kết đều tương đối.
 
 ## Cập nhật nội dung
 
-Menu bên trái được nhúng sẵn trong mọi trang. Sửa nội dung một trang chỉ cần sửa file đó; khi **thêm, xoá hoặc đổi tên** trang, menu ở các trang khác cũng phải cập nhật theo.
+Menu bên trái được nhúng sẵn trong mọi trang, nên khi **thêm, xoá hoặc đổi tên** trang, cả bộ cần được dựng lại để menu khớp.
 
 ## Đưa lên GitHub Pages
 
@@ -36,4 +36,4 @@ Menu bên trái được nhúng sẵn trong mọi trang. Sửa nội dung một 
 
 ## Giấy phép
 
-Phát triển từ dự án mã nguồn mở Explore Claude Code (MIT). Xem `LICENSE`.
+Phần Tham chiếu phát triển từ dự án mã nguồn mở Explore Claude Code (MIT). Xem `LICENSE`.
