@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chế độ quyền — Khám phá Claude Code</title>
+<meta name="description" content="Manual, Accept Edits, Don&#x27;t Ask và Bypass Permissions, cùng các rule và đường dẫn được bảo vệ áp lên trên.">
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+<header class="titlebar">
+  <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+  <label for="nav-toggle" class="menu-btn" aria-label="Mở danh mục">☰</label>
+  <a class="titlebar__text" href="../../index.html">kham-pha-claude-code : my-project</a>
+  <a class="titlebar__link" href="https://www.exploreclaudecode.com/" target="_blank" rel="noopener">Bản gốc ↗</a>
+</header>
+<div class="shell">
+<nav class="sidebar" aria-label="Cây thư mục">
+  <div class="sidebar__head">my-project</div>
+  <ul class="tree">
+    <li class="leaf"><a href="../../index.html"><span class="ico ico--home"></span><span class="name">Chào mừng</span></a></li>
+    <li class="dir"><details open><summary><span class="ico ico--dir"></span><span class="name">.claude</span><span class="badge badge--config">config</span></summary><ul><li class="leaf"><a href="../../claude/settings.html" title="Cài đặt &amp; Quyền"><span class="ico ico--file"></span><span class="name">settings.json</span><span class="badge badge--config">config</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">rules</span><span class="badge badge--rules">rules</span></summary><ul><li class="leaf"><a href="../../claude/rules/index.html" title="Rules là gì?"><span class="ico ico--file"></span><span class="name">RULES.md</span><span class="badge badge--rules">rules</span></a></li><li class="leaf"><a href="../../claude/rules/my-rule.html" title="Khung mẫu file Rule"><span class="ico ico--file"></span><span class="name">my-rule.md</span><span class="badge badge--rules">rules</span></a></li></ul></details></li><li class="dir dep"><details><summary><span class="ico ico--dir"></span><span class="name">commands</span><span class="badge badge--commands">commands</span></summary><ul><li class="leaf"><a href="../../claude/commands/index.html" title="Commands (Lỗi thời)"><span class="ico ico--file"></span><span class="name">COMMANDS.md</span><span class="badge badge--commands">commands</span></a></li><li class="dir dep"><details><summary><span class="ico ico--dir"></span><span class="name">my-command</span><span class="badge badge--commands">commands</span></summary><ul><li class="leaf"><a href="../../claude/commands/my-command.html" title="Khung mẫu file Command"><span class="ico ico--file"></span><span class="name">my-command.md</span><span class="badge badge--commands">commands</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">skills</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../claude/skills/index.html" title="Skills là gì?"><span class="ico ico--file"></span><span class="name">SKILLS.md</span><span class="badge badge--skill">skill</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-skill</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../claude/skills/skill-md.html" title="SKILL.md - Định nghĩa Skill"><span class="ico ico--file"></span><span class="name">SKILL.md</span><span class="badge badge--skill">skill</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">scripts</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../claude/skills/scripts.html" title="scripts/ - Mã thực thi"><span class="ico ico--file"></span><span class="name">helper.sh</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">references</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../claude/skills/references.html" title="references/ - Tài liệu chi tiết"><span class="ico ico--file"></span><span class="name">REFERENCE.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">assets</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../claude/skills/assets.html" title="assets/ - Tài nguyên tĩnh"><span class="ico ico--file"></span><span class="name">template.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">agents</span><span class="badge badge--agents">agents</span></summary><ul><li class="leaf"><a href="../../claude/agents/index.html" title="Tổng quan Agents"><span class="ico ico--file"></span><span class="name">AGENTS.md</span><span class="badge badge--agents">agents</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-agent</span><span class="badge badge--agents">agents</span></summary><ul><li class="leaf"><a href="../../claude/agents/my-agent.html" title="Khung mẫu file Agent"><span class="ico ico--file"></span><span class="name">my-agent.md</span><span class="badge badge--agents">agents</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">hooks</span><span class="badge badge--hooks">hooks</span></summary><ul><li class="leaf"><a href="../../claude/hooks/index.html" title="Tổng quan Hooks"><span class="ico ico--file"></span><span class="name">HOOKS.md</span><span class="badge badge--hooks">hooks</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-hook</span><span class="badge badge--hooks">hooks</span></summary><ul><li class="leaf"><a href="../../claude/hooks/my-hook.html" title="Khung mẫu Hook Script"><span class="ico ico--file"></span><span class="name">my-hook.sh</span><span class="badge badge--hooks">hooks</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">plugins</span><span class="badge badge--plugins">plugins</span></summary><ul><li class="leaf"><a href="../../claude/plugins/index.html" title="Plugins là gì?"><span class="ico ico--file"></span><span class="name">PLUGINS.md</span><span class="badge badge--plugins">plugins</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-plugin</span></summary><ul><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">.claude-plugin</span><span class="badge badge--plugins">plugins</span></summary><ul><li class="leaf"><a href="../../claude/plugins/plugin-json.html" title="Manifest của Plugin"><span class="ico ico--file"></span><span class="name">plugin.json</span><span class="badge badge--plugins">plugins</span></a></li></ul></details></li></ul></details></li><li class="leaf"><a href="../../claude/plugins/marketplaces.html" title="Plugin Marketplaces"><span class="ico ico--file"></span><span class="name">MARKETPLACES.md</span><span class="badge badge--marketplace">marketplace</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-marketplace</span></summary><ul><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">.claude-plugin</span><span class="badge badge--marketplace">marketplace</span></summary><ul><li class="leaf"><a href="../../claude/plugins/marketplace-json.html" title="Danh mục Marketplace"><span class="ico ico--file"></span><span class="name">marketplace.json</span><span class="badge badge--marketplace">marketplace</span></a></li></ul></details></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">mods</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="../../claude/mods/index.html" title="Mods là gì?"><span class="ico ico--file"></span><span class="name">MODS.md</span><span class="badge badge--mod">mod</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-mod</span></summary><ul><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">.claude-plugin</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="../../claude/mods/plugin-json.html" title="Manifest của Mod"><span class="ico ico--file"></span><span class="name">plugin.json</span><span class="badge badge--mod">mod</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">hooks</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="../../claude/mods/hooks-json.html" title="Danh sách module của Mod"><span class="ico ico--file"></span><span class="name">hooks.json</span><span class="badge badge--mod">mod</span></a></li><li class="leaf"><a href="../../claude/mods/my-mod.html" title="Bản thân Mod"><span class="ico ico--file"></span><span class="name">my-mod.mjs</span><span class="badge badge--mod">mod</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">types</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="../../claude/mods/types.html" title="Hợp đồng kiểu của Mod"><span class="ico ico--file"></span><span class="name">index.d.ts</span><span class="badge badge--mod">mod</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">tests</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="../../claude/mods/tests.html" title="Test cho Mod"><span class="ico ico--file"></span><span class="name">my-mod.test.ts</span><span class="badge badge--mod">mod</span></a></li></ul></details></li></ul></details></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">src</span><span class="badge badge--code">code</span></summary><ul><li class="leaf"><a href="../../project/src-index-ts.html" title="Điểm vào"><span class="ico ico--file"></span><span class="name">index.ts</span><span class="badge badge--code">code</span></a></li></ul></details></li><li class="leaf"><a href="../../project/claude-md.html" title="Bộ nhớ dự án"><span class="ico ico--file"></span><span class="name">CLAUDE.md</span><span class="badge badge--memory">memory</span></a></li><li class="leaf"><a href="../../project/mcp-json.html" title="Cấu hình MCP"><span class="ico ico--file"></span><span class="name">.mcp.json</span><span class="badge badge--mcp">MCP</span></a></li><li class="sep" aria-hidden="true"></li><li class="dir"><details open><summary><span class="ico ico--dir"></span><span class="name">built-in</span><span class="badge badge--builtin">tích hợp</span></summary><ul><li class="leaf"><a href="../index.html" title="Built-in là gì?"><span class="ico ico--file"></span><span class="name">BUILT-IN.md</span><span class="badge badge--builtin">tích hợp</span></a></li><li class="dir"><details open><summary><span class="ico ico--dir"></span><span class="name">modes</span><span class="badge badge--mode">chế độ</span></summary><ul><li class="leaf"><a href="index.html" title="Tổng quan Chế độ"><span class="ico ico--file"></span><span class="name">MODES.md</span><span class="badge badge--mode">chế độ</span></a></li><li class="dir"><details open><summary><span class="ico ico--dir"></span><span class="name">permission-modes</span><span class="badge badge--mode">chế độ</span></summary><ul><li class="leaf active"><a href="permission-modes.html" aria-current=page title="Chế độ quyền"><span class="ico ico--file"></span><span class="name">permission-modes.md</span><span class="badge badge--mode">chế độ</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">plan-mode</span><span class="badge badge--mode">chế độ</span></summary><ul><li class="leaf"><a href="plan-mode.html" title="Plan Mode"><span class="ico ico--file"></span><span class="name">plan-mode.md</span><span class="badge badge--mode">chế độ</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">auto-mode</span><span class="badge badge--mode">chế độ</span></summary><ul><li class="leaf"><a href="auto-mode.html" title="Auto Mode"><span class="ico ico--file"></span><span class="name">auto-mode.md</span><span class="badge badge--mode">chế độ</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">auto-memory</span><span class="badge badge--memory">memory</span></summary><ul><li class="leaf"><a href="../auto-memory.html" title="Auto Memory"><span class="ico ico--file"></span><span class="name">AUTO-MEMORY.md</span><span class="badge badge--memory">memory</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">context</span><span class="badge badge--context">context</span></summary><ul><li class="leaf"><a href="../context/index.html" title="Context Window"><span class="ico ico--file"></span><span class="name">CONTEXT.md</span><span class="badge badge--context">context</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">thinking</span><span class="badge badge--context">context</span></summary><ul><li class="leaf"><a href="../context/thinking.html" title="Extended Thinking"><span class="ico ico--file"></span><span class="name">thinking.md</span><span class="badge badge--context">context</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">keyboard</span><span class="badge badge--keyboard">bàn phím</span></summary><ul><li class="leaf"><a href="../keyboard/index.html" title="Tổng quan Bàn phím"><span class="ico ico--file"></span><span class="name">KEYBOARD.md</span><span class="badge badge--keyboard">bàn phím</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">shortcuts</span><span class="badge badge--keyboard">bàn phím</span></summary><ul><li class="leaf"><a href="../keyboard/shortcuts.html" title="Phím tắt"><span class="ico ico--file"></span><span class="name">shortcuts.md</span><span class="badge badge--keyboard">bàn phím</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">keybindings</span><span class="badge badge--keyboard">bàn phím</span></summary><ul><li class="leaf"><a href="../keyboard/keybindings.html" title="Keybindings"><span class="ico ico--file"></span><span class="name">keybindings.md</span><span class="badge badge--keyboard">bàn phím</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">vim-mode</span><span class="badge badge--keyboard">bàn phím</span></summary><ul><li class="leaf"><a href="../keyboard/vim-mode.html" title="Vim Mode"><span class="ico ico--file"></span><span class="name">vim-mode.md</span><span class="badge badge--keyboard">bàn phím</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">cli</span><span class="badge badge--terminal">CLI</span></summary><ul><li class="leaf"><a href="../cli/index.html" title="Tổng quan CLI"><span class="ico ico--file"></span><span class="name">CLI.md</span><span class="badge badge--terminal">CLI</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">flags</span><span class="badge badge--terminal">CLI</span></summary><ul><li class="leaf"><a href="../cli/flags.html" title="Cờ (Flags)"><span class="ico ico--file"></span><span class="name">flags.md</span><span class="badge badge--terminal">CLI</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">headless</span><span class="badge badge--terminal">CLI</span></summary><ul><li class="leaf"><a href="../cli/headless.html" title="Headless Mode"><span class="ico ico--file"></span><span class="name">headless.md</span><span class="badge badge--terminal">CLI</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">bundled-skills</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../bundled-skills/index.html" title="Tổng quan Bundled Skills"><span class="ico ico--file"></span><span class="name">BUNDLED-SKILLS.md</span><span class="badge badge--skill">skill</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">simplify</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../bundled-skills/simplify.html" title="/simplify"><span class="ico ico--file"></span><span class="name">simplify.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">batch</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../bundled-skills/batch.html" title="/batch"><span class="ico ico--file"></span><span class="name">batch.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">debug</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../bundled-skills/debug.html" title="/debug"><span class="ico ico--file"></span><span class="name">debug.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">loop</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../bundled-skills/loop.html" title="/loop"><span class="ico ico--file"></span><span class="name">loop.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">claude-api</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../bundled-skills/claude-api.html" title="/claude-api"><span class="ico ico--file"></span><span class="name">claude-api.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">code-review</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../bundled-skills/code-review.html" title="/code-review"><span class="ico ico--file"></span><span class="name">code-review.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">security-review</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../bundled-skills/security-review.html" title="/security-review"><span class="ico ico--file"></span><span class="name">security-review.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">deep-research</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../bundled-skills/deep-research.html" title="/deep-research"><span class="ico ico--file"></span><span class="name">deep-research.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">dataviz</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../bundled-skills/dataviz.html" title="/dataviz"><span class="ico ico--file"></span><span class="name">dataviz.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">run</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../bundled-skills/run.html" title="/run"><span class="ico ico--file"></span><span class="name">run.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">plugin-authoring</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../bundled-skills/plugin-authoring.html" title="/plugin-authoring"><span class="ico ico--file"></span><span class="name">plugin-authoring.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">commands</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../commands/index.html" title="Tổng quan Lệnh tích hợp"><span class="ico ico--file"></span><span class="name">BUILT-IN-COMMANDS.md</span><span class="badge badge--cli">lệnh slash</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">btw</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../commands/btw.html" title="/btw"><span class="ico ico--file"></span><span class="name">btw.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">compact</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../commands/compact.html" title="/compact"><span class="ico ico--file"></span><span class="name">compact.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">diff</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../commands/diff.html" title="/diff"><span class="ico ico--file"></span><span class="name">diff.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">init</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../commands/init.html" title="/init"><span class="ico ico--file"></span><span class="name">init.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">rewind</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../commands/rewind.html" title="/rewind"><span class="ico ico--file"></span><span class="name">rewind.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">resume</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../commands/resume.html" title="/resume"><span class="ico ico--file"></span><span class="name">resume.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">permissions</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../commands/permissions.html" title="/permissions"><span class="ico ico--file"></span><span class="name">permissions.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">model</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../commands/model.html" title="/model"><span class="ico ico--file"></span><span class="name">model.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li></ul></details></li></ul></details></li>
+  </ul>
+</nav>
+<label for="nav-toggle" class="backdrop" aria-hidden="true"></label>
+<main class="main"><article class="doc"><div class="crumbs">my-project <span>/</span> built-in <span>/</span> modes <span>/</span> permission-modes <span>/</span> permission-modes.md</div><span class="badge badge--mode badge--lg">chế độ</span><h1 class="doc__title">Chế độ quyền</h1><p class="doc__desc">Manual, Accept Edits, Don&#x27;t Ask và Bypass Permissions, cùng các rule và đường dẫn được bảo vệ áp lên trên.</p><div class="related"><div class="related__title">File liên quan</div><a href="index.html">built-in/modes/MODES.md</a></div><section class="file"><div class="file__bar"><span>built-in/modes/permission-modes/permission-modes.md</span></div><div class="md"><h1>Chế độ quyền</h1>
+<p>Bốn chế độ tích hợp đánh đổi mức giám sát lấy sự tiện lợi mà không có bộ phân loại an toàn: <strong>Manual</strong>, <strong>Accept Edits</strong>, <strong>Don't Ask</strong> và <strong>Bypass Permissions</strong>. Trang này trình bày bốn chế độ đó, cùng rule quyền và đường dẫn được bảo vệ áp lên mọi chế độ. Plan mode và Auto mode có mục riêng.</p>
+<h2>Manual</h2>
+<p>Mặc định. Claude đọc file thoải mái nhưng dừng xin duyệt trước khi sửa bất cứ gì, chạy lệnh shell không phải <span class="tip" tabindex="0">chỉ-đọc<span class="tip__box" role="tooltip">Các lệnh như ls, cat, grep và git status chỉ kiểm tra trạng thái. Claude Code giữ sẵn danh sách các lệnh này và không bao giờ hỏi</span></span>, hoặc gửi request mạng.</p>
+<ul>
+<li><strong>Giá trị cấu hình:</strong> <code>default</code> (bí danh <code>manual</code> cũng được)</li>
+<li><strong>Thanh trạng thái:</strong> <code>⏸ manual mode on</code></li>
+<li><strong>Dùng cho:</strong> lúc mới bắt đầu, và mọi việc bạn muốn thấy từng hành động trước khi nó xảy ra</li>
+</ul>
+<h2>Accept Edits</h2>
+<p>Claude tạo và sửa file trong thư mục làm việc mà không hỏi. Nó cũng tự duyệt các lệnh filesystem thông dụng: <code>mkdir</code>, <code>touch</code>, <code>rm</code>, <code>rmdir</code>, <code>mv</code>, <code>cp</code> và <code>sed</code>. Mọi thứ khác, kể cả lệnh shell khác, vẫn hỏi.</p>
+<ul>
+<li><strong>Giá trị cấu hình:</strong> <code>acceptEdits</code></li>
+<li><strong>Thanh trạng thái:</strong> <code>⏵⏵ accept edits on</code></li>
+<li><strong>Phạm vi:</strong> tự duyệt chỉ áp cho đường dẫn trong thư mục làm việc hoặc <span class="tip" tabindex="0">thư mục bổ sung<span class="tip__box" role="tooltip">Các thư mục thêm mà bạn cấp quyền bằng cờ --add-dir hoặc lệnh /add-dir</span></span>. Ghi ra ngoài phạm vi đó vẫn hỏi</li>
+<li><strong>Dùng cho:</strong> lặp trên code bạn định review sau bằng <code>git diff</code> thay vì duyệt từng lần sửa</li>
+</ul>
+<p>Nhấn <code>Shift+Tab</code> một lần từ Manual để vào chế độ này.</p>
+<h2>Don't Ask</h2>
+<p>Claude tự từ chối mọi thứ lẽ ra sẽ hỏi bạn. Nó chỉ chạy hành động khớp rule <code>allow</code>, lệnh chỉ-đọc, và lời gọi được <span class="tip" tabindex="0">hook PreToolUse<span class="tip__box" role="tooltip">Script chạy trước lời gọi công cụ, có thể duyệt hoặc từ chối nó. Xem mục hooks</span></span> duyệt. Phiên không bao giờ chờ đầu vào.</p>
+<ul>
+<li><strong>Giá trị cấu hình:</strong> <code>dontAsk</code></li>
+<li><strong>Thanh trạng thái:</strong> <code>⏵⏵ don't ask on</code></li>
+<li><strong>Không có trong vòng xoay:</strong> nó không bao giờ xuất hiện khi nhấn <code>Shift+Tab</code>. Đặt lúc khởi động bằng <code>claude --permission-mode dontAsk</code></li>
+<li><strong>Dùng cho:</strong> pipeline CI và môi trường hạn chế nơi bạn định nghĩa trước chính xác những gì Claude được làm</li>
+</ul>
+<h2>Bypass Permissions</h2>
+<p>Tắt hoàn toàn việc xin quyền và kiểm tra an toàn. Lời gọi công cụ chạy ngay lập tức, kể cả ghi vào đường dẫn được bảo vệ.</p>
+<ul>
+<li><strong>Giá trị cấu hình:</strong> <code>bypassPermissions</code> (cờ <code>--dangerously-skip-permissions</code> tương đương)</li>
+<li><strong>Thanh trạng thái:</strong> <code>⏵⏵ bypass permissions on</code></li>
+<li><strong>Hàng rào vẫn còn:</strong> rule <code>ask</code> tường minh, và cơ chế ngắt khẩn cấp với <code>rm -rf /</code> và <code>rm -rf ~</code></li>
+<li><strong>Không thể vào giữa phiên.</strong> Bật lúc khởi chạy bằng cờ hoặc <code>&quot;defaultMode&quot;: &quot;bypassPermissions&quot;</code>. Lần đầu, Claude Code hiện hộp thoại cảnh báo một lần. Nó cũng từ chối khởi động khi chạy bằng root hoặc <code>sudo</code></li>
+</ul>
+<blockquote>
+<p>Chỉ dùng Bypass Permissions trong môi trường cô lập như container hoặc VM không có internet, nơi Claude Code không thể làm hỏng máy chủ. Muốn ít bị hỏi mà vẫn có lưới an toàn, hãy dùng Auto mode.</p>
+</blockquote>
+<h2>Rule quyền xếp lớp lên trên</h2>
+<p>Chế độ đặt mức nền cho những gì chạy mà không hỏi. <span class="tip" tabindex="0">Rule quyền<span class="tip__box" role="tooltip">Các mục allow, ask và deny trong file settings, giới hạn theo công cụ và lệnh</span></span> tinh chỉnh mức đó, và áp dụng xuyên suốt các chế độ:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Tác dụng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>allow</code></td>
+<td>Duyệt trước một công cụ hoặc lệnh để nó không bao giờ hỏi</td>
+</tr>
+<tr>
+<td><code>ask</code></td>
+<td>Buộc hỏi, kể cả trong Bypass Permissions</td>
+</tr>
+<tr>
+<td><code>deny</code></td>
+<td>Chặn thẳng, ở mọi chế độ, kể cả Bypass Permissions</td>
+</tr>
+</tbody>
+</table></div>
+<p>Để bảo đảm tuyệt đối Claude không bao giờ làm điều gì đó, rule <code>deny</code> mạnh hơn mọi chế độ, vì chế độ không thể nới lỏng nó.</p>
+<h2>Đường dẫn được bảo vệ</h2>
+<p>Ở mọi chế độ trừ Bypass Permissions, việc ghi vào một nhóm nhỏ đường dẫn không bao giờ được tự duyệt, kể cả dưới Accept Edits hay rule <code>allow</code>. Điều này bảo vệ trạng thái repository và cấu hình của chính Claude khỏi bị hỏng do vô ý. Các vị trí được bảo vệ gồm <code>.git</code>, <code>.claude</code>, <code>.vscode</code>, <code>.idea</code>, và các file khởi động shell như <code>.zshrc</code> và <code>.bashrc</code>.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Chế độ</th>
+<th>Ghi vào đường dẫn được bảo vệ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manual, Accept Edits, Plan</td>
+<td>Hỏi</td>
+</tr>
+<tr>
+<td>Auto</td>
+<td>Chuyển cho bộ phân loại</td>
+</tr>
+<tr>
+<td>Don't Ask</td>
+<td>Từ chối</td>
+</tr>
+<tr>
+<td>Bypass Permissions</td>
+<td>Cho phép</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Đặt mặc định</h2>
+<p>Để mọi phiên bắt đầu ở một chế độ nhất định, đặt <code>defaultMode</code> trong <span class="tip" tabindex="0">file settings<span class="tip__box" role="tooltip">~/.claude/settings.json cho mọi dự án, hoặc .claude/settings.json cho một dự án</span></span>:</p>
+<div class="code"><span class="code__lang">json</span><pre><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"defaultMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acceptEdits"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h2>Mẹo</h2>
+<ul>
+<li><code>Shift+Tab</code> chỉ xoay vòng Manual, Accept Edits và Plan. Don't Ask và Bypass Permissions phải bật qua cờ hoặc settings</li>
+<li>Khi cần bảo đảm, hãy dùng rule <code>deny</code>, không phải chế độ. Chế độ là cài đặt cho tiện; rule deny mới là cưỡng chế</li>
+<li>Accept Edits đi cặp rất hợp với <code>/diff</code>: để Claude sửa thoải mái, rồi review mọi thay đổi ở một chỗ</li>
+</ul>
+<h2>Đọc thêm</h2>
+<ul>
+<li><a href="https://code.claude.com/docs/en/permission-modes" target="_blank" rel="noopener">Tài liệu chính thức: Chọn chế độ quyền</a></li>
+<li><a href="https://code.claude.com/docs/en/permissions" target="_blank" rel="noopener">Tài liệu chính thức: Permissions</a></li>
+</ul>
+</div><details class="raw"><summary>Xem mã nguồn markdown</summary><div class="code"><span class="code__lang">markdown</span><pre><code><span class="gh"># Chế độ quyền</span>
+
+Bốn chế độ tích hợp đánh đổi mức giám sát lấy sự tiện lợi mà không có bộ phân loại an toàn: <span class="gs">**Manual**</span>, <span class="gs">**Accept Edits**</span>, <span class="gs">**Don't Ask**</span> và <span class="gs">**Bypass Permissions**</span>. Trang này trình bày bốn chế độ đó, cùng rule quyền và đường dẫn được bảo vệ áp lên mọi chế độ. Plan mode và Auto mode có mục riêng.
+
+<span class="gu">## Manual</span>
+
+Mặc định. Claude đọc file thoải mái nhưng dừng xin duyệt trước khi sửa bất cứ gì, chạy lệnh shell không phải [<span class="nt">chỉ-đọc</span>](<span class="na">^Các lệnh như ls, cat, grep và git status chỉ kiểm tra trạng thái. Claude Code giữ sẵn danh sách các lệnh này và không bao giờ hỏi</span>), hoặc gửi request mạng.
+
+<span class="k">-</span><span class="w"> </span><span class="gs">**Giá trị cấu hình:**</span> <span class="sb">`default`</span> (bí danh <span class="sb">`manual`</span> cũng được)
+<span class="k">-</span><span class="w"> </span><span class="gs">**Thanh trạng thái:**</span> <span class="sb">`⏸ manual mode on`</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Dùng cho:**</span> lúc mới bắt đầu, và mọi việc bạn muốn thấy từng hành động trước khi nó xảy ra
+
+<span class="gu">## Accept Edits</span>
+
+Claude tạo và sửa file trong thư mục làm việc mà không hỏi. Nó cũng tự duyệt các lệnh filesystem thông dụng: <span class="sb">`mkdir`</span>, <span class="sb">`touch`</span>, <span class="sb">`rm`</span>, <span class="sb">`rmdir`</span>, <span class="sb">`mv`</span>, <span class="sb">`cp`</span> và <span class="sb">`sed`</span>. Mọi thứ khác, kể cả lệnh shell khác, vẫn hỏi.
+
+<span class="k">-</span><span class="w"> </span><span class="gs">**Giá trị cấu hình:**</span> <span class="sb">`acceptEdits`</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Thanh trạng thái:**</span> <span class="sb">`⏵⏵ accept edits on`</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Phạm vi:**</span> tự duyệt chỉ áp cho đường dẫn trong thư mục làm việc hoặc [<span class="nt">thư mục bổ sung</span>](<span class="na">^Các thư mục thêm mà bạn cấp quyền bằng cờ --add-dir hoặc lệnh /add-dir</span>). Ghi ra ngoài phạm vi đó vẫn hỏi
+<span class="k">-</span><span class="w"> </span><span class="gs">**Dùng cho:**</span> lặp trên code bạn định review sau bằng <span class="sb">`git diff`</span> thay vì duyệt từng lần sửa
+
+Nhấn <span class="sb">`Shift+Tab`</span> một lần từ Manual để vào chế độ này.
+
+<span class="gu">## Don't Ask</span>
+
+Claude tự từ chối mọi thứ lẽ ra sẽ hỏi bạn. Nó chỉ chạy hành động khớp rule <span class="sb">`allow`</span>, lệnh chỉ-đọc, và lời gọi được [<span class="nt">hook PreToolUse</span>](<span class="na">^Script chạy trước lời gọi công cụ, có thể duyệt hoặc từ chối nó. Xem mục hooks</span>) duyệt. Phiên không bao giờ chờ đầu vào.
+
+<span class="k">-</span><span class="w"> </span><span class="gs">**Giá trị cấu hình:**</span> <span class="sb">`dontAsk`</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Thanh trạng thái:**</span> <span class="sb">`⏵⏵ don't ask on`</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Không có trong vòng xoay:**</span> nó không bao giờ xuất hiện khi nhấn <span class="sb">`Shift+Tab`</span>. Đặt lúc khởi động bằng <span class="sb">`claude --permission-mode dontAsk`</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Dùng cho:**</span> pipeline CI và môi trường hạn chế nơi bạn định nghĩa trước chính xác những gì Claude được làm
+
+<span class="gu">## Bypass Permissions</span>
+
+Tắt hoàn toàn việc xin quyền và kiểm tra an toàn. Lời gọi công cụ chạy ngay lập tức, kể cả ghi vào đường dẫn được bảo vệ.
+
+<span class="k">-</span><span class="w"> </span><span class="gs">**Giá trị cấu hình:**</span> <span class="sb">`bypassPermissions`</span> (cờ <span class="sb">`--dangerously-skip-permissions`</span> tương đương)
+<span class="k">-</span><span class="w"> </span><span class="gs">**Thanh trạng thái:**</span> <span class="sb">`⏵⏵ bypass permissions on`</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Hàng rào vẫn còn:**</span> rule <span class="sb">`ask`</span> tường minh, và cơ chế ngắt khẩn cấp với <span class="sb">`rm -rf /`</span> và <span class="sb">`rm -rf ~`</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Không thể vào giữa phiên.**</span> Bật lúc khởi chạy bằng cờ hoặc <span class="sb">`"defaultMode": "bypassPermissions"`</span>. Lần đầu, Claude Code hiện hộp thoại cảnh báo một lần. Nó cũng từ chối khởi động khi chạy bằng root hoặc <span class="sb">`sudo`</span>
+
+<span class="k">&gt; </span><span class="ge">Chỉ dùng Bypass Permissions trong môi trường cô lập như container hoặc VM không có internet, nơi Claude Code không thể làm hỏng máy chủ. Muốn ít bị hỏi mà vẫn có lưới an toàn, hãy dùng Auto mode.</span>
+
+<span class="gu">## Rule quyền xếp lớp lên trên</span>
+
+Chế độ đặt mức nền cho những gì chạy mà không hỏi. [<span class="nt">Rule quyền</span>](<span class="na">^Các mục allow, ask và deny trong file settings, giới hạn theo công cụ và lệnh</span>) tinh chỉnh mức đó, và áp dụng xuyên suốt các chế độ:
+
+| Rule | Tác dụng |
+|---|---|
+| <span class="sb">`allow`</span> | Duyệt trước một công cụ hoặc lệnh để nó không bao giờ hỏi |
+| <span class="sb">`ask`</span> | Buộc hỏi, kể cả trong Bypass Permissions |
+| <span class="sb">`deny`</span> | Chặn thẳng, ở mọi chế độ, kể cả Bypass Permissions |
+
+Để bảo đảm tuyệt đối Claude không bao giờ làm điều gì đó, rule <span class="sb">`deny`</span> mạnh hơn mọi chế độ, vì chế độ không thể nới lỏng nó.
+
+<span class="gu">## Đường dẫn được bảo vệ</span>
+
+Ở mọi chế độ trừ Bypass Permissions, việc ghi vào một nhóm nhỏ đường dẫn không bao giờ được tự duyệt, kể cả dưới Accept Edits hay rule <span class="sb">`allow`</span>. Điều này bảo vệ trạng thái repository và cấu hình của chính Claude khỏi bị hỏng do vô ý. Các vị trí được bảo vệ gồm <span class="sb">`.git`</span>, <span class="sb">`.claude`</span>, <span class="sb">`.vscode`</span>, <span class="sb">`.idea`</span>, và các file khởi động shell như <span class="sb">`.zshrc`</span> và <span class="sb">`.bashrc`</span>.
+
+| Chế độ | Ghi vào đường dẫn được bảo vệ |
+|---|---|
+| Manual, Accept Edits, Plan | Hỏi |
+| Auto | Chuyển cho bộ phân loại |
+| Don't Ask | Từ chối |
+| Bypass Permissions | Cho phép |
+
+<span class="gu">## Đặt mặc định</span>
+
+Để mọi phiên bắt đầu ở một chế độ nhất định, đặt <span class="sb">`defaultMode`</span> trong [<span class="nt">file settings</span>](<span class="na">^~/.claude/settings.json cho mọi dự án, hoặc .claude/settings.json cho một dự án</span>):
+
+<span class="sb">```json</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"defaultMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acceptEdits"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="sb">```</span>
+
+<span class="gu">## Mẹo</span>
+
+<span class="k">-</span><span class="w"> </span><span class="sb">`Shift+Tab`</span> chỉ xoay vòng Manual, Accept Edits và Plan. Don't Ask và Bypass Permissions phải bật qua cờ hoặc settings
+<span class="k">-</span><span class="w"> </span>Khi cần bảo đảm, hãy dùng rule <span class="sb">`deny`</span>, không phải chế độ. Chế độ là cài đặt cho tiện; rule deny mới là cưỡng chế
+<span class="k">-</span><span class="w"> </span>Accept Edits đi cặp rất hợp với <span class="sb">`/diff`</span>: để Claude sửa thoải mái, rồi review mọi thay đổi ở một chỗ
+
+<span class="gu">## Đọc thêm</span>
+
+<span class="k">-</span><span class="w"> </span>[<span class="nt">Tài liệu chính thức: Chọn chế độ quyền</span>](<span class="na">https://code.claude.com/docs/en/permission-modes</span>)
+<span class="k">-</span><span class="w"> </span>[<span class="nt">Tài liệu chính thức: Permissions</span>](<span class="na">https://code.claude.com/docs/en/permissions</span>)
+</code></pre></div></details></section><nav class="pager"><a class="pager__prev" href="index.html"><small>← Trước</small>Tổng quan Chế độ</a><a class="pager__next" href="plan-mode.html"><small>Tiếp →</small>Plan Mode</a></nav></article>
+<footer class="foot">Bản dịch tiếng Việt, HTML tĩnh, của <a href="https://github.com/LukeRenton/explore-claude-code" target="_blank" rel="noopener">Explore Claude Code</a> · © 2026 Luke Renton · Giấy phép MIT</footer>
+</main>
+</div>
+</body>
+</html>

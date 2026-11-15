@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tổng quan Hooks — Khám phá Claude Code</title>
+<meta name="description" content="Cách hooks chặn hành động của Claude để kiểm tra, định dạng và đảm bảo an toàn.">
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+<header class="titlebar">
+  <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+  <label for="nav-toggle" class="menu-btn" aria-label="Mở danh mục">☰</label>
+  <a class="titlebar__text" href="../../index.html">kham-pha-claude-code : my-project</a>
+  <a class="titlebar__link" href="https://www.exploreclaudecode.com/" target="_blank" rel="noopener">Bản gốc ↗</a>
+</header>
+<div class="shell">
+<nav class="sidebar" aria-label="Cây thư mục">
+  <div class="sidebar__head">my-project</div>
+  <ul class="tree">
+    <li class="leaf"><a href="../../index.html"><span class="ico ico--home"></span><span class="name">Chào mừng</span></a></li>
+    <li class="dir"><details open><summary><span class="ico ico--dir"></span><span class="name">.claude</span><span class="badge badge--config">config</span></summary><ul><li class="leaf"><a href="../settings.html" title="Cài đặt &amp; Quyền"><span class="ico ico--file"></span><span class="name">settings.json</span><span class="badge badge--config">config</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">rules</span><span class="badge badge--rules">rules</span></summary><ul><li class="leaf"><a href="../rules/index.html" title="Rules là gì?"><span class="ico ico--file"></span><span class="name">RULES.md</span><span class="badge badge--rules">rules</span></a></li><li class="leaf"><a href="../rules/my-rule.html" title="Khung mẫu file Rule"><span class="ico ico--file"></span><span class="name">my-rule.md</span><span class="badge badge--rules">rules</span></a></li></ul></details></li><li class="dir dep"><details><summary><span class="ico ico--dir"></span><span class="name">commands</span><span class="badge badge--commands">commands</span></summary><ul><li class="leaf"><a href="../commands/index.html" title="Commands (Lỗi thời)"><span class="ico ico--file"></span><span class="name">COMMANDS.md</span><span class="badge badge--commands">commands</span></a></li><li class="dir dep"><details><summary><span class="ico ico--dir"></span><span class="name">my-command</span><span class="badge badge--commands">commands</span></summary><ul><li class="leaf"><a href="../commands/my-command.html" title="Khung mẫu file Command"><span class="ico ico--file"></span><span class="name">my-command.md</span><span class="badge badge--commands">commands</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">skills</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../skills/index.html" title="Skills là gì?"><span class="ico ico--file"></span><span class="name">SKILLS.md</span><span class="badge badge--skill">skill</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-skill</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../skills/skill-md.html" title="SKILL.md - Định nghĩa Skill"><span class="ico ico--file"></span><span class="name">SKILL.md</span><span class="badge badge--skill">skill</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">scripts</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../skills/scripts.html" title="scripts/ - Mã thực thi"><span class="ico ico--file"></span><span class="name">helper.sh</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">references</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../skills/references.html" title="references/ - Tài liệu chi tiết"><span class="ico ico--file"></span><span class="name">REFERENCE.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">assets</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../skills/assets.html" title="assets/ - Tài nguyên tĩnh"><span class="ico ico--file"></span><span class="name">template.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">agents</span><span class="badge badge--agents">agents</span></summary><ul><li class="leaf"><a href="../agents/index.html" title="Tổng quan Agents"><span class="ico ico--file"></span><span class="name">AGENTS.md</span><span class="badge badge--agents">agents</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-agent</span><span class="badge badge--agents">agents</span></summary><ul><li class="leaf"><a href="../agents/my-agent.html" title="Khung mẫu file Agent"><span class="ico ico--file"></span><span class="name">my-agent.md</span><span class="badge badge--agents">agents</span></a></li></ul></details></li></ul></details></li><li class="dir"><details open><summary><span class="ico ico--dir"></span><span class="name">hooks</span><span class="badge badge--hooks">hooks</span></summary><ul><li class="leaf active"><a href="index.html" aria-current=page title="Tổng quan Hooks"><span class="ico ico--file"></span><span class="name">HOOKS.md</span><span class="badge badge--hooks">hooks</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-hook</span><span class="badge badge--hooks">hooks</span></summary><ul><li class="leaf"><a href="my-hook.html" title="Khung mẫu Hook Script"><span class="ico ico--file"></span><span class="name">my-hook.sh</span><span class="badge badge--hooks">hooks</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">plugins</span><span class="badge badge--plugins">plugins</span></summary><ul><li class="leaf"><a href="../plugins/index.html" title="Plugins là gì?"><span class="ico ico--file"></span><span class="name">PLUGINS.md</span><span class="badge badge--plugins">plugins</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-plugin</span></summary><ul><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">.claude-plugin</span><span class="badge badge--plugins">plugins</span></summary><ul><li class="leaf"><a href="../plugins/plugin-json.html" title="Manifest của Plugin"><span class="ico ico--file"></span><span class="name">plugin.json</span><span class="badge badge--plugins">plugins</span></a></li></ul></details></li></ul></details></li><li class="leaf"><a href="../plugins/marketplaces.html" title="Plugin Marketplaces"><span class="ico ico--file"></span><span class="name">MARKETPLACES.md</span><span class="badge badge--marketplace">marketplace</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-marketplace</span></summary><ul><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">.claude-plugin</span><span class="badge badge--marketplace">marketplace</span></summary><ul><li class="leaf"><a href="../plugins/marketplace-json.html" title="Danh mục Marketplace"><span class="ico ico--file"></span><span class="name">marketplace.json</span><span class="badge badge--marketplace">marketplace</span></a></li></ul></details></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">mods</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="../mods/index.html" title="Mods là gì?"><span class="ico ico--file"></span><span class="name">MODS.md</span><span class="badge badge--mod">mod</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-mod</span></summary><ul><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">.claude-plugin</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="../mods/plugin-json.html" title="Manifest của Mod"><span class="ico ico--file"></span><span class="name">plugin.json</span><span class="badge badge--mod">mod</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">hooks</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="../mods/hooks-json.html" title="Danh sách module của Mod"><span class="ico ico--file"></span><span class="name">hooks.json</span><span class="badge badge--mod">mod</span></a></li><li class="leaf"><a href="../mods/my-mod.html" title="Bản thân Mod"><span class="ico ico--file"></span><span class="name">my-mod.mjs</span><span class="badge badge--mod">mod</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">types</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="../mods/types.html" title="Hợp đồng kiểu của Mod"><span class="ico ico--file"></span><span class="name">index.d.ts</span><span class="badge badge--mod">mod</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">tests</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="../mods/tests.html" title="Test cho Mod"><span class="ico ico--file"></span><span class="name">my-mod.test.ts</span><span class="badge badge--mod">mod</span></a></li></ul></details></li></ul></details></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">src</span><span class="badge badge--code">code</span></summary><ul><li class="leaf"><a href="../../project/src-index-ts.html" title="Điểm vào"><span class="ico ico--file"></span><span class="name">index.ts</span><span class="badge badge--code">code</span></a></li></ul></details></li><li class="leaf"><a href="../../project/claude-md.html" title="Bộ nhớ dự án"><span class="ico ico--file"></span><span class="name">CLAUDE.md</span><span class="badge badge--memory">memory</span></a></li><li class="leaf"><a href="../../project/mcp-json.html" title="Cấu hình MCP"><span class="ico ico--file"></span><span class="name">.mcp.json</span><span class="badge badge--mcp">MCP</span></a></li><li class="sep" aria-hidden="true"></li><li class="dir"><details open><summary><span class="ico ico--dir"></span><span class="name">built-in</span><span class="badge badge--builtin">tích hợp</span></summary><ul><li class="leaf"><a href="../../built-in/index.html" title="Built-in là gì?"><span class="ico ico--file"></span><span class="name">BUILT-IN.md</span><span class="badge badge--builtin">tích hợp</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">modes</span><span class="badge badge--mode">chế độ</span></summary><ul><li class="leaf"><a href="../../built-in/modes/index.html" title="Tổng quan Chế độ"><span class="ico ico--file"></span><span class="name">MODES.md</span><span class="badge badge--mode">chế độ</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">permission-modes</span><span class="badge badge--mode">chế độ</span></summary><ul><li class="leaf"><a href="../../built-in/modes/permission-modes.html" title="Chế độ quyền"><span class="ico ico--file"></span><span class="name">permission-modes.md</span><span class="badge badge--mode">chế độ</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">plan-mode</span><span class="badge badge--mode">chế độ</span></summary><ul><li class="leaf"><a href="../../built-in/modes/plan-mode.html" title="Plan Mode"><span class="ico ico--file"></span><span class="name">plan-mode.md</span><span class="badge badge--mode">chế độ</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">auto-mode</span><span class="badge badge--mode">chế độ</span></summary><ul><li class="leaf"><a href="../../built-in/modes/auto-mode.html" title="Auto Mode"><span class="ico ico--file"></span><span class="name">auto-mode.md</span><span class="badge badge--mode">chế độ</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">auto-memory</span><span class="badge badge--memory">memory</span></summary><ul><li class="leaf"><a href="../../built-in/auto-memory.html" title="Auto Memory"><span class="ico ico--file"></span><span class="name">AUTO-MEMORY.md</span><span class="badge badge--memory">memory</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">context</span><span class="badge badge--context">context</span></summary><ul><li class="leaf"><a href="../../built-in/context/index.html" title="Context Window"><span class="ico ico--file"></span><span class="name">CONTEXT.md</span><span class="badge badge--context">context</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">thinking</span><span class="badge badge--context">context</span></summary><ul><li class="leaf"><a href="../../built-in/context/thinking.html" title="Extended Thinking"><span class="ico ico--file"></span><span class="name">thinking.md</span><span class="badge badge--context">context</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">keyboard</span><span class="badge badge--keyboard">bàn phím</span></summary><ul><li class="leaf"><a href="../../built-in/keyboard/index.html" title="Tổng quan Bàn phím"><span class="ico ico--file"></span><span class="name">KEYBOARD.md</span><span class="badge badge--keyboard">bàn phím</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">shortcuts</span><span class="badge badge--keyboard">bàn phím</span></summary><ul><li class="leaf"><a href="../../built-in/keyboard/shortcuts.html" title="Phím tắt"><span class="ico ico--file"></span><span class="name">shortcuts.md</span><span class="badge badge--keyboard">bàn phím</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">keybindings</span><span class="badge badge--keyboard">bàn phím</span></summary><ul><li class="leaf"><a href="../../built-in/keyboard/keybindings.html" title="Keybindings"><span class="ico ico--file"></span><span class="name">keybindings.md</span><span class="badge badge--keyboard">bàn phím</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">vim-mode</span><span class="badge badge--keyboard">bàn phím</span></summary><ul><li class="leaf"><a href="../../built-in/keyboard/vim-mode.html" title="Vim Mode"><span class="ico ico--file"></span><span class="name">vim-mode.md</span><span class="badge badge--keyboard">bàn phím</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">cli</span><span class="badge badge--terminal">CLI</span></summary><ul><li class="leaf"><a href="../../built-in/cli/index.html" title="Tổng quan CLI"><span class="ico ico--file"></span><span class="name">CLI.md</span><span class="badge badge--terminal">CLI</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">flags</span><span class="badge badge--terminal">CLI</span></summary><ul><li class="leaf"><a href="../../built-in/cli/flags.html" title="Cờ (Flags)"><span class="ico ico--file"></span><span class="name">flags.md</span><span class="badge badge--terminal">CLI</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">headless</span><span class="badge badge--terminal">CLI</span></summary><ul><li class="leaf"><a href="../../built-in/cli/headless.html" title="Headless Mode"><span class="ico ico--file"></span><span class="name">headless.md</span><span class="badge badge--terminal">CLI</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">bundled-skills</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/index.html" title="Tổng quan Bundled Skills"><span class="ico ico--file"></span><span class="name">BUNDLED-SKILLS.md</span><span class="badge badge--skill">skill</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">simplify</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/simplify.html" title="/simplify"><span class="ico ico--file"></span><span class="name">simplify.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">batch</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/batch.html" title="/batch"><span class="ico ico--file"></span><span class="name">batch.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">debug</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/debug.html" title="/debug"><span class="ico ico--file"></span><span class="name">debug.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">loop</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/loop.html" title="/loop"><span class="ico ico--file"></span><span class="name">loop.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">claude-api</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/claude-api.html" title="/claude-api"><span class="ico ico--file"></span><span class="name">claude-api.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">code-review</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/code-review.html" title="/code-review"><span class="ico ico--file"></span><span class="name">code-review.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">security-review</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/security-review.html" title="/security-review"><span class="ico ico--file"></span><span class="name">security-review.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">deep-research</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/deep-research.html" title="/deep-research"><span class="ico ico--file"></span><span class="name">deep-research.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">dataviz</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/dataviz.html" title="/dataviz"><span class="ico ico--file"></span><span class="name">dataviz.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">run</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/run.html" title="/run"><span class="ico ico--file"></span><span class="name">run.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">plugin-authoring</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/plugin-authoring.html" title="/plugin-authoring"><span class="ico ico--file"></span><span class="name">plugin-authoring.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">commands</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/index.html" title="Tổng quan Lệnh tích hợp"><span class="ico ico--file"></span><span class="name">BUILT-IN-COMMANDS.md</span><span class="badge badge--cli">lệnh slash</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">btw</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/btw.html" title="/btw"><span class="ico ico--file"></span><span class="name">btw.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">compact</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/compact.html" title="/compact"><span class="ico ico--file"></span><span class="name">compact.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">diff</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/diff.html" title="/diff"><span class="ico ico--file"></span><span class="name">diff.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">init</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/init.html" title="/init"><span class="ico ico--file"></span><span class="name">init.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">rewind</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/rewind.html" title="/rewind"><span class="ico ico--file"></span><span class="name">rewind.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">resume</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/resume.html" title="/resume"><span class="ico ico--file"></span><span class="name">resume.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">permissions</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/permissions.html" title="/permissions"><span class="ico ico--file"></span><span class="name">permissions.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">model</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/model.html" title="/model"><span class="ico ico--file"></span><span class="name">model.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li></ul></details></li></ul></details></li>
+  </ul>
+</nav>
+<label for="nav-toggle" class="backdrop" aria-hidden="true"></label>
+<main class="main"><article class="doc"><div class="crumbs">my-project <span>/</span> .claude <span>/</span> hooks <span>/</span> HOOKS.md</div><span class="badge badge--hooks badge--lg">hooks</span><h1 class="doc__title">Tổng quan Hooks</h1><p class="doc__desc">Cách hooks chặn hành động của Claude để kiểm tra, định dạng và đảm bảo an toàn.</p><div class="related"><div class="related__title">File liên quan</div><a href="my-hook.html">.claude/hooks/my-hook/my-hook.sh</a></div><section class="file"><div class="file__bar"><span>.claude/hooks/HOOKS.md</span></div><div class="md"><h1>Hooks</h1>
+<p>Hooks là các script tuỳ chỉnh tự động chạy ở những thời điểm xác định trong phiên Claude Code. Chúng cho phép bạn chặn lời gọi công cụ, kiểm tra thay đổi, áp luật và gắn Claude vào quy trình phát triển sẵn có.</p>
+<h2>Bắt đầu nhanh</h2>
+<ol>
+<li>Mở <code>.claude/settings.json</code> (hoặc chạy <code>/hooks</code> trong phiên)</li>
+<li>Thêm một hook dưới sự kiện bạn muốn chặn (vd. <code>PreToolUse</code>, <code>PostToolUse</code>)</li>
+<li>Viết script đọc JSON từ stdin, kiểm tra, rồi thoát với mã 0 (cho phép) hoặc 2 (chặn)</li>
+<li>Khởi động lại Claude Code. Hooks được chụp lại lúc khởi động</li>
+</ol>
+<h2>Hooks hoạt động thế nào</h2>
+<p>Mỗi hành động Claude thực hiện đều phát ra một <span class="tip" tabindex="0">sự kiện hook<span class="tip__box" role="tooltip">Một điểm có tên trong vòng đời nơi hooks có thể chạy, như PreToolUse hay PostToolUse</span></span>. Cấu hình của bạn cho Claude Code biết cần theo dõi sự kiện nào và chạy gì khi chúng xảy ra.</p>
+<ol>
+<li><strong>Sự kiện phát ra</strong>. Claude sắp gọi công cụ, trả lời xong, bắt đầu phiên...</li>
+<li><strong>Matcher kiểm tra</strong>. Nếu bạn định nghĩa matcher (regex trên tên công cụ hoặc nguồn sự kiện), chỉ sự kiện khớp mới kích hoạt hook</li>
+<li><strong>Hook handler chạy</strong>. Script của bạn (hoặc endpoint HTTP, hoặc prompt LLM) nhận bối cảnh JSON qua stdin</li>
+<li><strong>Claude hành động theo kết quả</strong>. Mã thoát 0 là cho phép. Mã thoát 2 là chặn (với sự kiện hỗ trợ). Output JSON cho kiểm soát chi tiết hơn</li>
+</ol>
+<h2>Các sự kiện hook</h2>
+<p>Hooks phát ra ở các điểm sau trong vòng đời của Claude. Sự kiện trong vòng lặp agentic phát ra lặp lại khi Claude làm việc:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Sự kiện</th>
+<th>Khi nào phát ra</th>
+<th>Chặn được?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SessionStart</code></td>
+<td>Phiên bắt đầu hoặc tiếp tục</td>
+<td>Không</td>
+</tr>
+<tr>
+<td><code>UserPromptSubmit</code></td>
+<td>Bạn gửi prompt, trước khi Claude xử lý</td>
+<td>Có</td>
+</tr>
+<tr>
+<td><code>PreToolUse</code></td>
+<td>Trước khi một lời gọi công cụ chạy</td>
+<td>Có</td>
+</tr>
+<tr>
+<td><code>PermissionRequest</code></td>
+<td>Khi hộp thoại xin quyền sắp hiện</td>
+<td>Có</td>
+</tr>
+<tr>
+<td><code>PostToolUse</code></td>
+<td>Sau khi công cụ chạy thành công</td>
+<td>Chỉ phản hồi</td>
+</tr>
+<tr>
+<td><code>PostToolUseFailure</code></td>
+<td>Sau khi công cụ chạy thất bại</td>
+<td>Chỉ phản hồi</td>
+</tr>
+<tr>
+<td><code>Stop</code></td>
+<td>Khi Claude trả lời xong</td>
+<td>Có (buộc tiếp tục)</td>
+</tr>
+<tr>
+<td><code>SubagentStart</code></td>
+<td>Khi một subagent được sinh ra</td>
+<td>Không</td>
+</tr>
+<tr>
+<td><code>SubagentStop</code></td>
+<td>Khi một subagent kết thúc</td>
+<td>Có</td>
+</tr>
+<tr>
+<td><code>Notification</code></td>
+<td>Khi Claude gửi thông báo</td>
+<td>Không</td>
+</tr>
+<tr>
+<td><code>TeammateIdle</code></td>
+<td>Khi một thành viên agent team sắp rảnh</td>
+<td>Có</td>
+</tr>
+<tr>
+<td><code>TaskCompleted</code></td>
+<td>Khi một task đang được đánh dấu hoàn thành</td>
+<td>Có</td>
+</tr>
+<tr>
+<td><code>ConfigChange</code></td>
+<td>Khi một file cấu hình thay đổi</td>
+<td>Có</td>
+</tr>
+<tr>
+<td><code>PreCompact</code></td>
+<td>Trước khi nén bối cảnh</td>
+<td>Không</td>
+</tr>
+<tr>
+<td><code>SessionEnd</code></td>
+<td>Khi phiên kết thúc</td>
+<td>Không</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Cấu hình</h2>
+<p>Hooks được định nghĩa trong file settings. Có ba cấp lồng nhau:</p>
+<ol>
+<li><strong>Sự kiện hook</strong>: điểm vòng đời nào cần phản hồi</li>
+<li><strong>Nhóm matcher</strong>: bộ lọc regex (vd. chỉ cho công cụ <code>Bash</code>)</li>
+<li><strong>Hook handler</strong>: script, endpoint, prompt hoặc agent sẽ chạy</li>
+</ol>
+<div class="code"><span class="code__lang">json</span><pre><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"hooks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"PreToolUse"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"matcher"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bash"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"hooks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"command"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">".claude/hooks/validate-bash.sh"</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h3>Định nghĩa hooks ở đâu</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Vị trí</th>
+<th>Phạm vi</th>
+<th>Commit?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>~/.claude/settings.json</code></td>
+<td>Mọi dự án của bạn</td>
+<td>Không</td>
+</tr>
+<tr>
+<td><code>.claude/settings.json</code></td>
+<td>Dự án này, dùng chung</td>
+<td>Có</td>
+</tr>
+<tr>
+<td><code>.claude/settings.local.json</code></td>
+<td>Dự án này, cá nhân</td>
+<td>Không</td>
+</tr>
+<tr>
+<td>Plugin <code>hooks/hooks.json</code></td>
+<td>Khi plugin được bật</td>
+<td>Có</td>
+</tr>
+<tr>
+<td>Frontmatter của skill/agent</td>
+<td>Khi thành phần đó đang hoạt động</td>
+<td>Có</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Mẫu matcher</h3>
+<p><code>matcher</code> là regex so khớp với các trường khác nhau tuỳ sự kiện:</p>
+<ul>
+<li><strong>Sự kiện công cụ</strong> (<code>PreToolUse</code>, <code>PostToolUse</code>...): khớp <code>tool_name</code> (vd. <code>Bash</code>, <code>Edit|Write</code>, <code>mcp__github__.*</code>)</li>
+<li><strong>SessionStart</strong>: khớp cách phiên bắt đầu (<code>startup</code>, <code>resume</code>, <code>clear</code>, <code>compact</code>)</li>
+<li><strong>SessionEnd</strong>: khớp lý do phiên kết thúc (<code>clear</code>, <code>logout</code>, <code>other</code>)</li>
+<li><strong>Notification</strong>: khớp loại thông báo (<code>permission_prompt</code>, <code>idle_prompt</code>)</li>
+<li><strong>SubagentStart/Stop</strong>: khớp loại agent (<code>Bash</code>, <code>Explore</code>, <code>Plan</code>, hoặc tên tuỳ chỉnh)</li>
+</ul>
+<p>Bỏ trống matcher hoặc dùng <code>&quot;*&quot;</code> để khớp tất cả. Một số sự kiện như <code>UserPromptSubmit</code> và <code>Stop</code> không hỗ trợ matcher và luôn phát ra.</p>
+<h3>Các loại hook handler</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Loại</th>
+<th>Cách hoạt động</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>command</code></td>
+<td>Chạy lệnh shell. Nhận JSON qua stdin. Giao tiếp bằng mã thoát và stdout</td>
+</tr>
+<tr>
+<td><code>http</code></td>
+<td>Gửi JSON bằng POST tới một URL. Body phản hồi quyết định kết quả</td>
+</tr>
+<tr>
+<td><code>prompt</code></td>
+<td>Gửi đầu vào cho một model Claude để đánh giá có/không trong một lượt</td>
+</tr>
+<tr>
+<td><code>agent</code></td>
+<td>Sinh subagent có công cụ (Read, Grep, Glob) để kiểm chứng điều kiện</td>
+</tr>
+</tbody>
+</table></div>
+<p>Không phải sự kiện nào cũng hỗ trợ mọi loại. <code>SessionStart</code>, <code>Notification</code>, <code>PreCompact</code> và một số khác chỉ hỗ trợ hook <code>command</code>.</p>
+<h2>Đầu vào và đầu ra</h2>
+<h3>Hook của bạn nhận gì</h3>
+<p>Mọi hook nhận JSON này qua stdin (hoặc làm body POST với hook HTTP):</p>
+<div class="code"><span class="code__lang">json</span><pre><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"session_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"cwd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/home/user/my-project"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"permission_mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"hook_event_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PreToolUse"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"tool_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bash"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"tool_input"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm test"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>Trường <code>tool_name</code> và <code>tool_input</code> là riêng theo sự kiện. Mỗi sự kiện thêm trường riêng bên cạnh các trường chung.</p>
+<h3>Mã thoát</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Mã</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td>Thành công. Claude Code đọc stdout để lấy output JSON (nếu có)</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td>Lỗi chặn. stderr được gửi cho Claude như thông báo lỗi. Tác dụng tuỳ sự kiện</td>
+</tr>
+<tr>
+<td>Khác</td>
+<td>Lỗi không chặn. stderr hiện ở chế độ verbose, việc thực thi tiếp tục</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Output JSON</h3>
+<p>Để kiểm soát chi tiết hơn, thoát với mã 0 và in JSON ra stdout thay vì chỉ dùng mã thoát:</p>
+<div class="code"><span class="code__lang">json</span><pre><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"hookSpecificOutput"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"hookEventName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PreToolUse"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"permissionDecision"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"permissionDecisionReason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Đã chặn lệnh phá huỷ"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>Các trường JSON chung dùng được với mọi sự kiện:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Trường</th>
+<th>Tác dụng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>continue</code></td>
+<td>Nếu <code>false</code>, Claude dừng xử lý hoàn toàn</td>
+</tr>
+<tr>
+<td><code>stopReason</code></td>
+<td>Thông báo hiện cho người dùng khi <code>continue</code> là false</td>
+</tr>
+<tr>
+<td><code>suppressOutput</code></td>
+<td>Nếu <code>true</code>, ẩn stdout khỏi chế độ verbose</td>
+</tr>
+<tr>
+<td><code>systemMessage</code></td>
+<td>Thông báo cảnh báo hiện cho người dùng</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Async Hooks</h2>
+<p>Thêm <code>&quot;async&quot;: true</code> vào hook command để chạy nó dưới nền. Claude tiếp tục làm việc ngay trong khi hook chạy. Kết quả được gửi ở lượt hội thoại kế tiếp.</p>
+<div class="code"><span class="code__lang">json</span><pre><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"command"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">".claude/hooks/run-tests.sh"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"async"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span>
+<span class="p">}</span>
+</code></pre></div><p>Async hook không thể chặn lời gọi công cụ hay trả về quyết định. Chúng hữu ích để chạy bộ test, deploy hay gửi thông báo song song với việc của Claude.</p>
+<h2>Khuôn mẫu thường gặp</h2>
+<p><strong>Chặn lệnh nguy hiểm</strong> (PreToolUse trên Bash): phân tích <code>tool_input.command</code>, kiểm tra <code>rm -rf</code> hoặc mẫu phá huỷ khác, thoát mã 2 để chặn.</p>
+<p><strong>Tự định dạng sau khi sửa</strong> (PostToolUse trên Write|Edit): chạy linter hoặc formatter trên file vừa đổi, gửi output lại cho Claude.</p>
+<p><strong>Kiểm tra kiểu sau thay đổi</strong> (PostToolUse trên Write|Edit): chạy <code>tsc --no-emit</code> sau khi sửa TypeScript, Claude thấy lỗi và sửa các chỗ gọi.</p>
+<p><strong>Ngăn code trùng lặp</strong> (PostToolUse trên Write): khởi chạy một phiên Claude thứ hai để review code mới so với khuôn mẫu sẵn có.</p>
+<p><strong>Cổng chất lượng trước khi dừng</strong> (Stop): kiểm tra test pass hoặc file bắt buộc tồn tại trước khi cho Claude kết thúc.</p>
+<p><strong>Chèn môi trường lúc khởi động</strong> (SessionStart): ghi các câu lệnh <code>export</code> vào <code>$CLAUDE_ENV_FILE</code> để đặt biến môi trường cho phiên.</p>
+<h2>Cần nhiều hơn một script?</h2>
+<p>Shell hook khởi chạy tiến trình mới cho mỗi sự kiện. Nếu bạn muốn trạng thái tồn tại suốt phiên, UI sống như một dải phía trên ô prompt hay một pane gắn cạnh, hoặc gọi trực tiếp tính năng của Claude Code, hãy viết một <span class="tip" tabindex="0">mod<span class="tip__box" role="tooltip">Hook JavaScript chạy bên trong phiên của bạn. Xem mục mods</span></span>. Mod là function hook được phát hành dưới dạng plugin.</p>
+<h2>Mẹo</h2>
+<ul>
+<li>Hooks được chụp lại lúc khởi động phiên. Khởi động lại Claude sau khi đổi cấu hình hook</li>
+<li>Dùng <code>$CLAUDE_PROJECT_DIR</code> trong lệnh để tham chiếu script tương đối với gốc dự án</li>
+<li>Dùng <code>/hooks</code> trong phiên để xem, thêm và xoá hook một cách tương tác</li>
+<li>Chạy <code>claude --debug</code> để xem chi tiết thực thi hook và mã thoát</li>
+<li>Đặt <code>&quot;disableAllHooks&quot;: true</code> trong settings để tạm tắt mọi hook</li>
+<li>Giữ hook chạy nhanh. Timeout mặc định là 600 giây cho command, 30 giây cho prompt</li>
+<li>Đặt biến shell trong ngoặc kép (<code>&quot;$VAR&quot;</code> thay vì <code>$VAR</code>) và kiểm tra đầu vào. Hook script chạy với toàn quyền người dùng của bạn</li>
+<li>Với công cụ MCP, khớp bằng mẫu như <code>mcp__github__.*</code> hoặc <code>mcp__.*__write.*</code></li>
+<li>Hook prompt và agent trả về <code>{&quot;ok&quot;: true/false, &quot;reason&quot;: &quot;...&quot;}</code> thay vì dùng mã thoát</li>
+</ul>
+<p><a href="https://code.claude.com/docs/en/hooks" target="_blank" rel="noopener">Tham chiếu Hooks</a> |
+<a href="https://code.claude.com/docs/en/hooks-guide" target="_blank" rel="noopener">Hướng dẫn Hooks</a></p>
+</div><details class="raw"><summary>Xem mã nguồn markdown</summary><div class="code"><span class="code__lang">markdown</span><pre><code><span class="gh"># Hooks</span>
+
+Hooks là các script tuỳ chỉnh tự động chạy ở những thời điểm xác định trong phiên Claude Code. Chúng cho phép bạn chặn lời gọi công cụ, kiểm tra thay đổi, áp luật và gắn Claude vào quy trình phát triển sẵn có.
+
+<span class="gu">## Bắt đầu nhanh</span>
+
+<span class="k">1.</span> Mở <span class="sb">`.claude/settings.json`</span> (hoặc chạy <span class="sb">`/hooks`</span> trong phiên)
+<span class="k">2.</span> Thêm một hook dưới sự kiện bạn muốn chặn (vd. <span class="sb">`PreToolUse`</span>, <span class="sb">`PostToolUse`</span>)
+<span class="k">3.</span> Viết script đọc JSON từ stdin, kiểm tra, rồi thoát với mã 0 (cho phép) hoặc 2 (chặn)
+<span class="k">4.</span> Khởi động lại Claude Code. Hooks được chụp lại lúc khởi động
+
+<span class="gu">## Hooks hoạt động thế nào</span>
+
+Mỗi hành động Claude thực hiện đều phát ra một [<span class="nt">sự kiện hook</span>](<span class="na">^Một điểm có tên trong vòng đời nơi hooks có thể chạy, như PreToolUse hay PostToolUse</span>). Cấu hình của bạn cho Claude Code biết cần theo dõi sự kiện nào và chạy gì khi chúng xảy ra.
+
+<span class="k">1.</span> <span class="gs">**Sự kiện phát ra**</span>. Claude sắp gọi công cụ, trả lời xong, bắt đầu phiên...
+<span class="k">2.</span> <span class="gs">**Matcher kiểm tra**</span>. Nếu bạn định nghĩa matcher (regex trên tên công cụ hoặc nguồn sự kiện), chỉ sự kiện khớp mới kích hoạt hook
+<span class="k">3.</span> <span class="gs">**Hook handler chạy**</span>. Script của bạn (hoặc endpoint HTTP, hoặc prompt LLM) nhận bối cảnh JSON qua stdin
+<span class="k">4.</span> <span class="gs">**Claude hành động theo kết quả**</span>. Mã thoát 0 là cho phép. Mã thoát 2 là chặn (với sự kiện hỗ trợ). Output JSON cho kiểm soát chi tiết hơn
+
+<span class="gu">## Các sự kiện hook</span>
+
+Hooks phát ra ở các điểm sau trong vòng đời của Claude. Sự kiện trong vòng lặp agentic phát ra lặp lại khi Claude làm việc:
+
+| Sự kiện | Khi nào phát ra | Chặn được? |
+|---|---|---|
+| <span class="sb">`SessionStart`</span> | Phiên bắt đầu hoặc tiếp tục | Không |
+| <span class="sb">`UserPromptSubmit`</span> | Bạn gửi prompt, trước khi Claude xử lý | Có |
+| <span class="sb">`PreToolUse`</span> | Trước khi một lời gọi công cụ chạy | Có |
+| <span class="sb">`PermissionRequest`</span> | Khi hộp thoại xin quyền sắp hiện | Có |
+| <span class="sb">`PostToolUse`</span> | Sau khi công cụ chạy thành công | Chỉ phản hồi |
+| <span class="sb">`PostToolUseFailure`</span> | Sau khi công cụ chạy thất bại | Chỉ phản hồi |
+| <span class="sb">`Stop`</span> | Khi Claude trả lời xong | Có (buộc tiếp tục) |
+| <span class="sb">`SubagentStart`</span> | Khi một subagent được sinh ra | Không |
+| <span class="sb">`SubagentStop`</span> | Khi một subagent kết thúc | Có |
+| <span class="sb">`Notification`</span> | Khi Claude gửi thông báo | Không |
+| <span class="sb">`TeammateIdle`</span> | Khi một thành viên agent team sắp rảnh | Có |
+| <span class="sb">`TaskCompleted`</span> | Khi một task đang được đánh dấu hoàn thành | Có |
+| <span class="sb">`ConfigChange`</span> | Khi một file cấu hình thay đổi | Có |
+| <span class="sb">`PreCompact`</span> | Trước khi nén bối cảnh | Không |
+| <span class="sb">`SessionEnd`</span> | Khi phiên kết thúc | Không |
+
+<span class="gu">## Cấu hình</span>
+
+Hooks được định nghĩa trong file settings. Có ba cấp lồng nhau:
+
+<span class="k">1.</span> <span class="gs">**Sự kiện hook**</span>: điểm vòng đời nào cần phản hồi
+<span class="k">2.</span> <span class="gs">**Nhóm matcher**</span>: bộ lọc regex (vd. chỉ cho công cụ <span class="sb">`Bash`</span>)
+<span class="k">3.</span> <span class="gs">**Hook handler**</span>: script, endpoint, prompt hoặc agent sẽ chạy
+
+<span class="sb">```json</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">"hooks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"PreToolUse"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"matcher"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bash"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"hooks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"command"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">".claude/hooks/validate-bash.sh"</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="sb">```</span>
+
+<span class="gu">### Định nghĩa hooks ở đâu</span>
+
+| Vị trí | Phạm vi | Commit? |
+|---|---|---|
+| <span class="sb">`~/.claude/settings.json`</span> | Mọi dự án của bạn | Không |
+| <span class="sb">`.claude/settings.json`</span> | Dự án này, dùng chung | Có |
+| <span class="sb">`.claude/settings.local.json`</span> | Dự án này, cá nhân | Không |
+| Plugin <span class="sb">`hooks/hooks.json`</span> | Khi plugin được bật | Có |
+| Frontmatter của skill/agent | Khi thành phần đó đang hoạt động | Có |
+
+<span class="gu">### Mẫu matcher</span>
+
+<span class="sb">`matcher`</span> là regex so khớp với các trường khác nhau tuỳ sự kiện:
+
+<span class="k">-</span><span class="w"> </span><span class="gs">**Sự kiện công cụ**</span> (<span class="sb">`PreToolUse`</span>, <span class="sb">`PostToolUse`</span>...): khớp <span class="sb">`tool_name`</span> (vd. <span class="sb">`Bash`</span>, <span class="sb">`Edit|Write`</span>, <span class="sb">`mcp__github__.*`</span>)
+<span class="k">-</span><span class="w"> </span><span class="gs">**SessionStart**</span>: khớp cách phiên bắt đầu (<span class="sb">`startup`</span>, <span class="sb">`resume`</span>, <span class="sb">`clear`</span>, <span class="sb">`compact`</span>)
+<span class="k">-</span><span class="w"> </span><span class="gs">**SessionEnd**</span>: khớp lý do phiên kết thúc (<span class="sb">`clear`</span>, <span class="sb">`logout`</span>, <span class="sb">`other`</span>)
+<span class="k">-</span><span class="w"> </span><span class="gs">**Notification**</span>: khớp loại thông báo (<span class="sb">`permission_prompt`</span>, <span class="sb">`idle_prompt`</span>)
+<span class="k">-</span><span class="w"> </span><span class="gs">**SubagentStart/Stop**</span>: khớp loại agent (<span class="sb">`Bash`</span>, <span class="sb">`Explore`</span>, <span class="sb">`Plan`</span>, hoặc tên tuỳ chỉnh)
+
+Bỏ trống matcher hoặc dùng <span class="sb">`"*"`</span> để khớp tất cả. Một số sự kiện như <span class="sb">`UserPromptSubmit`</span> và <span class="sb">`Stop`</span> không hỗ trợ matcher và luôn phát ra.
+
+<span class="gu">### Các loại hook handler</span>
+
+| Loại | Cách hoạt động |
+|---|---|
+| <span class="sb">`command`</span> | Chạy lệnh shell. Nhận JSON qua stdin. Giao tiếp bằng mã thoát và stdout |
+| <span class="sb">`http`</span> | Gửi JSON bằng POST tới một URL. Body phản hồi quyết định kết quả |
+| <span class="sb">`prompt`</span> | Gửi đầu vào cho một model Claude để đánh giá có/không trong một lượt |
+| <span class="sb">`agent`</span> | Sinh subagent có công cụ (Read, Grep, Glob) để kiểm chứng điều kiện |
+
+Không phải sự kiện nào cũng hỗ trợ mọi loại. <span class="sb">`SessionStart`</span>, <span class="sb">`Notification`</span>, <span class="sb">`PreCompact`</span> và một số khác chỉ hỗ trợ hook <span class="sb">`command`</span>.
+
+<span class="gu">## Đầu vào và đầu ra</span>
+
+<span class="gu">### Hook của bạn nhận gì</span>
+
+Mọi hook nhận JSON này qua stdin (hoặc làm body POST với hook HTTP):
+
+<span class="sb">```json</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">"session_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"cwd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/home/user/my-project"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"permission_mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"hook_event_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PreToolUse"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"tool_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bash"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"tool_input"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm test"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="sb">```</span>
+
+Trường <span class="sb">`tool_name`</span> và <span class="sb">`tool_input`</span> là riêng theo sự kiện. Mỗi sự kiện thêm trường riêng bên cạnh các trường chung.
+
+<span class="gu">### Mã thoát</span>
+
+| Mã | Ý nghĩa |
+|---|---|
+| <span class="sb">`0`</span> | Thành công. Claude Code đọc stdout để lấy output JSON (nếu có) |
+| <span class="sb">`2`</span> | Lỗi chặn. stderr được gửi cho Claude như thông báo lỗi. Tác dụng tuỳ sự kiện |
+| Khác | Lỗi không chặn. stderr hiện ở chế độ verbose, việc thực thi tiếp tục |
+
+<span class="gu">### Output JSON</span>
+
+Để kiểm soát chi tiết hơn, thoát với mã 0 và in JSON ra stdout thay vì chỉ dùng mã thoát:
+
+<span class="sb">```json</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">"hookSpecificOutput"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"hookEventName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PreToolUse"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"permissionDecision"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"permissionDecisionReason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Đã chặn lệnh phá huỷ"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="sb">```</span>
+
+Các trường JSON chung dùng được với mọi sự kiện:
+
+| Trường | Tác dụng |
+|---|---|
+| <span class="sb">`continue`</span> | Nếu <span class="sb">`false`</span>, Claude dừng xử lý hoàn toàn |
+| <span class="sb">`stopReason`</span> | Thông báo hiện cho người dùng khi <span class="sb">`continue`</span> là false |
+| <span class="sb">`suppressOutput`</span> | Nếu <span class="sb">`true`</span>, ẩn stdout khỏi chế độ verbose |
+| <span class="sb">`systemMessage`</span> | Thông báo cảnh báo hiện cho người dùng |
+
+<span class="gu">## Async Hooks</span>
+
+Thêm <span class="sb">`"async": true`</span> vào hook command để chạy nó dưới nền. Claude tiếp tục làm việc ngay trong khi hook chạy. Kết quả được gửi ở lượt hội thoại kế tiếp.
+
+<span class="sb">```json</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"command"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">".claude/hooks/run-tests.sh"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"async"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span>
+<span class="p">}</span>
+<span class="sb">```</span>
+
+Async hook không thể chặn lời gọi công cụ hay trả về quyết định. Chúng hữu ích để chạy bộ test, deploy hay gửi thông báo song song với việc của Claude.
+
+<span class="gu">## Khuôn mẫu thường gặp</span>
+
+<span class="gs">**Chặn lệnh nguy hiểm**</span> (PreToolUse trên Bash): phân tích <span class="sb">`tool_input.command`</span>, kiểm tra <span class="sb">`rm -rf`</span> hoặc mẫu phá huỷ khác, thoát mã 2 để chặn.
+
+<span class="gs">**Tự định dạng sau khi sửa**</span> (PostToolUse trên Write|Edit): chạy linter hoặc formatter trên file vừa đổi, gửi output lại cho Claude.
+
+<span class="gs">**Kiểm tra kiểu sau thay đổi**</span> (PostToolUse trên Write|Edit): chạy <span class="sb">`tsc --no-emit`</span> sau khi sửa TypeScript, Claude thấy lỗi và sửa các chỗ gọi.
+
+<span class="gs">**Ngăn code trùng lặp**</span> (PostToolUse trên Write): khởi chạy một phiên Claude thứ hai để review code mới so với khuôn mẫu sẵn có.
+
+<span class="gs">**Cổng chất lượng trước khi dừng**</span> (Stop): kiểm tra test pass hoặc file bắt buộc tồn tại trước khi cho Claude kết thúc.
+
+<span class="gs">**Chèn môi trường lúc khởi động**</span> (SessionStart): ghi các câu lệnh <span class="sb">`export`</span> vào <span class="sb">`$CLAUDE_ENV_FILE`</span> để đặt biến môi trường cho phiên.
+
+<span class="gu">## Cần nhiều hơn một script?</span>
+
+Shell hook khởi chạy tiến trình mới cho mỗi sự kiện. Nếu bạn muốn trạng thái tồn tại suốt phiên, UI sống như một dải phía trên ô prompt hay một pane gắn cạnh, hoặc gọi trực tiếp tính năng của Claude Code, hãy viết một [<span class="nt">mod</span>](<span class="na">^Hook JavaScript chạy bên trong phiên của bạn. Xem mục mods</span>). Mod là function hook được phát hành dưới dạng plugin.
+
+<span class="gu">## Mẹo</span>
+
+<span class="k">-</span><span class="w"> </span>Hooks được chụp lại lúc khởi động phiên. Khởi động lại Claude sau khi đổi cấu hình hook
+<span class="k">-</span><span class="w"> </span>Dùng <span class="sb">`$CLAUDE_PROJECT_DIR`</span> trong lệnh để tham chiếu script tương đối với gốc dự án
+<span class="k">-</span><span class="w"> </span>Dùng <span class="sb">`/hooks`</span> trong phiên để xem, thêm và xoá hook một cách tương tác
+<span class="k">-</span><span class="w"> </span>Chạy <span class="sb">`claude --debug`</span> để xem chi tiết thực thi hook và mã thoát
+<span class="k">-</span><span class="w"> </span>Đặt <span class="sb">`"disableAllHooks": true`</span> trong settings để tạm tắt mọi hook
+<span class="k">-</span><span class="w"> </span>Giữ hook chạy nhanh. Timeout mặc định là 600 giây cho command, 30 giây cho prompt
+<span class="k">-</span><span class="w"> </span>Đặt biến shell trong ngoặc kép (<span class="sb">`"$VAR"`</span> thay vì <span class="sb">`$VAR`</span>) và kiểm tra đầu vào. Hook script chạy với toàn quyền người dùng của bạn
+<span class="k">-</span><span class="w"> </span>Với công cụ MCP, khớp bằng mẫu như <span class="sb">`mcp__github__.*`</span> hoặc <span class="sb">`mcp__.*__write.*`</span>
+<span class="k">-</span><span class="w"> </span>Hook prompt và agent trả về <span class="sb">`{"ok": true/false, "reason": "..."}`</span> thay vì dùng mã thoát
+
+[<span class="nt">Tham chiếu Hooks</span>](<span class="na">https://code.claude.com/docs/en/hooks</span>) |
+[<span class="nt">Hướng dẫn Hooks</span>](<span class="na">https://code.claude.com/docs/en/hooks-guide</span>)
+</code></pre></div></details></section><nav class="pager"><a class="pager__prev" href="../agents/my-agent.html"><small>← Trước</small>Khung mẫu file Agent</a><a class="pager__next" href="my-hook.html"><small>Tiếp →</small>Khung mẫu Hook Script</a></nav></article>
+<footer class="foot">Bản dịch tiếng Việt, HTML tĩnh, của <a href="https://github.com/LukeRenton/explore-claude-code" target="_blank" rel="noopener">Explore Claude Code</a> · © 2026 Luke Renton · Giấy phép MIT</footer>
+</main>
+</div>
+</body>
+</html>

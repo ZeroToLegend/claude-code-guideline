@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bộ nhớ dự án — Khám phá Claude Code</title>
+<meta name="description" content="File Claude đọc khi bắt đầu mỗi phiên. Bộ nhớ lâu dài của dự án.">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+<header class="titlebar">
+  <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+  <label for="nav-toggle" class="menu-btn" aria-label="Mở danh mục">☰</label>
+  <a class="titlebar__text" href="../index.html">kham-pha-claude-code : my-project</a>
+  <a class="titlebar__link" href="https://www.exploreclaudecode.com/" target="_blank" rel="noopener">Bản gốc ↗</a>
+</header>
+<div class="shell">
+<nav class="sidebar" aria-label="Cây thư mục">
+  <div class="sidebar__head">my-project</div>
+  <ul class="tree">
+    <li class="leaf"><a href="../index.html"><span class="ico ico--home"></span><span class="name">Chào mừng</span></a></li>
+    <li class="dir"><details open><summary><span class="ico ico--dir"></span><span class="name">.claude</span><span class="badge badge--config">config</span></summary><ul><li class="leaf"><a href="../claude/settings.html" title="Cài đặt &amp; Quyền"><span class="ico ico--file"></span><span class="name">settings.json</span><span class="badge badge--config">config</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">rules</span><span class="badge badge--rules">rules</span></summary><ul><li class="leaf"><a href="../claude/rules/index.html" title="Rules là gì?"><span class="ico ico--file"></span><span class="name">RULES.md</span><span class="badge badge--rules">rules</span></a></li><li class="leaf"><a href="../claude/rules/my-rule.html" title="Khung mẫu file Rule"><span class="ico ico--file"></span><span class="name">my-rule.md</span><span class="badge badge--rules">rules</span></a></li></ul></details></li><li class="dir dep"><details><summary><span class="ico ico--dir"></span><span class="name">commands</span><span class="badge badge--commands">commands</span></summary><ul><li class="leaf"><a href="../claude/commands/index.html" title="Commands (Lỗi thời)"><span class="ico ico--file"></span><span class="name">COMMANDS.md</span><span class="badge badge--commands">commands</span></a></li><li class="dir dep"><details><summary><span class="ico ico--dir"></span><span class="name">my-command</span><span class="badge badge--commands">commands</span></summary><ul><li class="leaf"><a href="../claude/commands/my-command.html" title="Khung mẫu file Command"><span class="ico ico--file"></span><span class="name">my-command.md</span><span class="badge badge--commands">commands</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">skills</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../claude/skills/index.html" title="Skills là gì?"><span class="ico ico--file"></span><span class="name">SKILLS.md</span><span class="badge badge--skill">skill</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-skill</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../claude/skills/skill-md.html" title="SKILL.md - Định nghĩa Skill"><span class="ico ico--file"></span><span class="name">SKILL.md</span><span class="badge badge--skill">skill</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">scripts</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../claude/skills/scripts.html" title="scripts/ - Mã thực thi"><span class="ico ico--file"></span><span class="name">helper.sh</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">references</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../claude/skills/references.html" title="references/ - Tài liệu chi tiết"><span class="ico ico--file"></span><span class="name">REFERENCE.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">assets</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../claude/skills/assets.html" title="assets/ - Tài nguyên tĩnh"><span class="ico ico--file"></span><span class="name">template.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">agents</span><span class="badge badge--agents">agents</span></summary><ul><li class="leaf"><a href="../claude/agents/index.html" title="Tổng quan Agents"><span class="ico ico--file"></span><span class="name">AGENTS.md</span><span class="badge badge--agents">agents</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-agent</span><span class="badge badge--agents">agents</span></summary><ul><li class="leaf"><a href="../claude/agents/my-agent.html" title="Khung mẫu file Agent"><span class="ico ico--file"></span><span class="name">my-agent.md</span><span class="badge badge--agents">agents</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">hooks</span><span class="badge badge--hooks">hooks</span></summary><ul><li class="leaf"><a href="../claude/hooks/index.html" title="Tổng quan Hooks"><span class="ico ico--file"></span><span class="name">HOOKS.md</span><span class="badge badge--hooks">hooks</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-hook</span><span class="badge badge--hooks">hooks</span></summary><ul><li class="leaf"><a href="../claude/hooks/my-hook.html" title="Khung mẫu Hook Script"><span class="ico ico--file"></span><span class="name">my-hook.sh</span><span class="badge badge--hooks">hooks</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">plugins</span><span class="badge badge--plugins">plugins</span></summary><ul><li class="leaf"><a href="../claude/plugins/index.html" title="Plugins là gì?"><span class="ico ico--file"></span><span class="name">PLUGINS.md</span><span class="badge badge--plugins">plugins</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-plugin</span></summary><ul><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">.claude-plugin</span><span class="badge badge--plugins">plugins</span></summary><ul><li class="leaf"><a href="../claude/plugins/plugin-json.html" title="Manifest của Plugin"><span class="ico ico--file"></span><span class="name">plugin.json</span><span class="badge badge--plugins">plugins</span></a></li></ul></details></li></ul></details></li><li class="leaf"><a href="../claude/plugins/marketplaces.html" title="Plugin Marketplaces"><span class="ico ico--file"></span><span class="name">MARKETPLACES.md</span><span class="badge badge--marketplace">marketplace</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-marketplace</span></summary><ul><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">.claude-plugin</span><span class="badge badge--marketplace">marketplace</span></summary><ul><li class="leaf"><a href="../claude/plugins/marketplace-json.html" title="Danh mục Marketplace"><span class="ico ico--file"></span><span class="name">marketplace.json</span><span class="badge badge--marketplace">marketplace</span></a></li></ul></details></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">mods</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="../claude/mods/index.html" title="Mods là gì?"><span class="ico ico--file"></span><span class="name">MODS.md</span><span class="badge badge--mod">mod</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-mod</span></summary><ul><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">.claude-plugin</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="../claude/mods/plugin-json.html" title="Manifest của Mod"><span class="ico ico--file"></span><span class="name">plugin.json</span><span class="badge badge--mod">mod</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">hooks</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="../claude/mods/hooks-json.html" title="Danh sách module của Mod"><span class="ico ico--file"></span><span class="name">hooks.json</span><span class="badge badge--mod">mod</span></a></li><li class="leaf"><a href="../claude/mods/my-mod.html" title="Bản thân Mod"><span class="ico ico--file"></span><span class="name">my-mod.mjs</span><span class="badge badge--mod">mod</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">types</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="../claude/mods/types.html" title="Hợp đồng kiểu của Mod"><span class="ico ico--file"></span><span class="name">index.d.ts</span><span class="badge badge--mod">mod</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">tests</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="../claude/mods/tests.html" title="Test cho Mod"><span class="ico ico--file"></span><span class="name">my-mod.test.ts</span><span class="badge badge--mod">mod</span></a></li></ul></details></li></ul></details></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">src</span><span class="badge badge--code">code</span></summary><ul><li class="leaf"><a href="src-index-ts.html" title="Điểm vào"><span class="ico ico--file"></span><span class="name">index.ts</span><span class="badge badge--code">code</span></a></li></ul></details></li><li class="leaf active"><a href="claude-md.html" aria-current=page title="Bộ nhớ dự án"><span class="ico ico--file"></span><span class="name">CLAUDE.md</span><span class="badge badge--memory">memory</span></a></li><li class="leaf"><a href="mcp-json.html" title="Cấu hình MCP"><span class="ico ico--file"></span><span class="name">.mcp.json</span><span class="badge badge--mcp">MCP</span></a></li><li class="sep" aria-hidden="true"></li><li class="dir"><details open><summary><span class="ico ico--dir"></span><span class="name">built-in</span><span class="badge badge--builtin">tích hợp</span></summary><ul><li class="leaf"><a href="../built-in/index.html" title="Built-in là gì?"><span class="ico ico--file"></span><span class="name">BUILT-IN.md</span><span class="badge badge--builtin">tích hợp</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">modes</span><span class="badge badge--mode">chế độ</span></summary><ul><li class="leaf"><a href="../built-in/modes/index.html" title="Tổng quan Chế độ"><span class="ico ico--file"></span><span class="name">MODES.md</span><span class="badge badge--mode">chế độ</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">permission-modes</span><span class="badge badge--mode">chế độ</span></summary><ul><li class="leaf"><a href="../built-in/modes/permission-modes.html" title="Chế độ quyền"><span class="ico ico--file"></span><span class="name">permission-modes.md</span><span class="badge badge--mode">chế độ</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">plan-mode</span><span class="badge badge--mode">chế độ</span></summary><ul><li class="leaf"><a href="../built-in/modes/plan-mode.html" title="Plan Mode"><span class="ico ico--file"></span><span class="name">plan-mode.md</span><span class="badge badge--mode">chế độ</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">auto-mode</span><span class="badge badge--mode">chế độ</span></summary><ul><li class="leaf"><a href="../built-in/modes/auto-mode.html" title="Auto Mode"><span class="ico ico--file"></span><span class="name">auto-mode.md</span><span class="badge badge--mode">chế độ</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">auto-memory</span><span class="badge badge--memory">memory</span></summary><ul><li class="leaf"><a href="../built-in/auto-memory.html" title="Auto Memory"><span class="ico ico--file"></span><span class="name">AUTO-MEMORY.md</span><span class="badge badge--memory">memory</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">context</span><span class="badge badge--context">context</span></summary><ul><li class="leaf"><a href="../built-in/context/index.html" title="Context Window"><span class="ico ico--file"></span><span class="name">CONTEXT.md</span><span class="badge badge--context">context</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">thinking</span><span class="badge badge--context">context</span></summary><ul><li class="leaf"><a href="../built-in/context/thinking.html" title="Extended Thinking"><span class="ico ico--file"></span><span class="name">thinking.md</span><span class="badge badge--context">context</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">keyboard</span><span class="badge badge--keyboard">bàn phím</span></summary><ul><li class="leaf"><a href="../built-in/keyboard/index.html" title="Tổng quan Bàn phím"><span class="ico ico--file"></span><span class="name">KEYBOARD.md</span><span class="badge badge--keyboard">bàn phím</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">shortcuts</span><span class="badge badge--keyboard">bàn phím</span></summary><ul><li class="leaf"><a href="../built-in/keyboard/shortcuts.html" title="Phím tắt"><span class="ico ico--file"></span><span class="name">shortcuts.md</span><span class="badge badge--keyboard">bàn phím</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">keybindings</span><span class="badge badge--keyboard">bàn phím</span></summary><ul><li class="leaf"><a href="../built-in/keyboard/keybindings.html" title="Keybindings"><span class="ico ico--file"></span><span class="name">keybindings.md</span><span class="badge badge--keyboard">bàn phím</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">vim-mode</span><span class="badge badge--keyboard">bàn phím</span></summary><ul><li class="leaf"><a href="../built-in/keyboard/vim-mode.html" title="Vim Mode"><span class="ico ico--file"></span><span class="name">vim-mode.md</span><span class="badge badge--keyboard">bàn phím</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">cli</span><span class="badge badge--terminal">CLI</span></summary><ul><li class="leaf"><a href="../built-in/cli/index.html" title="Tổng quan CLI"><span class="ico ico--file"></span><span class="name">CLI.md</span><span class="badge badge--terminal">CLI</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">flags</span><span class="badge badge--terminal">CLI</span></summary><ul><li class="leaf"><a href="../built-in/cli/flags.html" title="Cờ (Flags)"><span class="ico ico--file"></span><span class="name">flags.md</span><span class="badge badge--terminal">CLI</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">headless</span><span class="badge badge--terminal">CLI</span></summary><ul><li class="leaf"><a href="../built-in/cli/headless.html" title="Headless Mode"><span class="ico ico--file"></span><span class="name">headless.md</span><span class="badge badge--terminal">CLI</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">bundled-skills</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../built-in/bundled-skills/index.html" title="Tổng quan Bundled Skills"><span class="ico ico--file"></span><span class="name">BUNDLED-SKILLS.md</span><span class="badge badge--skill">skill</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">simplify</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../built-in/bundled-skills/simplify.html" title="/simplify"><span class="ico ico--file"></span><span class="name">simplify.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">batch</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../built-in/bundled-skills/batch.html" title="/batch"><span class="ico ico--file"></span><span class="name">batch.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">debug</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../built-in/bundled-skills/debug.html" title="/debug"><span class="ico ico--file"></span><span class="name">debug.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">loop</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../built-in/bundled-skills/loop.html" title="/loop"><span class="ico ico--file"></span><span class="name">loop.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">claude-api</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../built-in/bundled-skills/claude-api.html" title="/claude-api"><span class="ico ico--file"></span><span class="name">claude-api.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">code-review</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../built-in/bundled-skills/code-review.html" title="/code-review"><span class="ico ico--file"></span><span class="name">code-review.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">security-review</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../built-in/bundled-skills/security-review.html" title="/security-review"><span class="ico ico--file"></span><span class="name">security-review.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">deep-research</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../built-in/bundled-skills/deep-research.html" title="/deep-research"><span class="ico ico--file"></span><span class="name">deep-research.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">dataviz</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../built-in/bundled-skills/dataviz.html" title="/dataviz"><span class="ico ico--file"></span><span class="name">dataviz.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">run</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../built-in/bundled-skills/run.html" title="/run"><span class="ico ico--file"></span><span class="name">run.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">plugin-authoring</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../built-in/bundled-skills/plugin-authoring.html" title="/plugin-authoring"><span class="ico ico--file"></span><span class="name">plugin-authoring.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">commands</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../built-in/commands/index.html" title="Tổng quan Lệnh tích hợp"><span class="ico ico--file"></span><span class="name">BUILT-IN-COMMANDS.md</span><span class="badge badge--cli">lệnh slash</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">btw</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../built-in/commands/btw.html" title="/btw"><span class="ico ico--file"></span><span class="name">btw.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">compact</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../built-in/commands/compact.html" title="/compact"><span class="ico ico--file"></span><span class="name">compact.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">diff</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../built-in/commands/diff.html" title="/diff"><span class="ico ico--file"></span><span class="name">diff.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">init</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../built-in/commands/init.html" title="/init"><span class="ico ico--file"></span><span class="name">init.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">rewind</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../built-in/commands/rewind.html" title="/rewind"><span class="ico ico--file"></span><span class="name">rewind.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">resume</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../built-in/commands/resume.html" title="/resume"><span class="ico ico--file"></span><span class="name">resume.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">permissions</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../built-in/commands/permissions.html" title="/permissions"><span class="ico ico--file"></span><span class="name">permissions.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">model</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../built-in/commands/model.html" title="/model"><span class="ico ico--file"></span><span class="name">model.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li></ul></details></li></ul></details></li>
+  </ul>
+</nav>
+<label for="nav-toggle" class="backdrop" aria-hidden="true"></label>
+<main class="main"><article class="doc"><div class="crumbs">my-project <span>/</span> CLAUDE.md</div><span class="badge badge--memory badge--lg">memory</span><h1 class="doc__title">Bộ nhớ dự án</h1><p class="doc__desc">File Claude đọc khi bắt đầu mỗi phiên. Bộ nhớ lâu dài của dự án.</p><section class="file"><div class="file__bar"><span>CLAUDE.md</span></div><div class="md"><h1>CLAUDE.md</h1>
+<p>Một file markdown cung cấp cho Claude bối cảnh lâu dài về dự án của bạn. Nó được nạp tự động vào mọi phiên, không cần nhắc thủ công.</p>
+<h2>Bắt đầu nhanh</h2>
+<ol>
+<li>Chạy <code>/init</code> trong Claude Code. Nó phân tích codebase và tạo một <code>CLAUDE.md</code> khởi đầu</li>
+<li>Xem lại và tinh chỉnh những gì nó tạo ra. Bổ sung những điều Claude không tự suy ra được</li>
+<li>Commit vào git để cả nhóm dùng chung một bối cảnh</li>
+<li>Cải tiến theo thời gian. Thêm chỉ dẫn mỗi khi bạn phát hiện điểm vướng</li>
+</ol>
+<h2>Nên viết gì trong đó</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Mục</th>
+<th>Mục đích</th>
+<th>Ví dụ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tổng quan dự án</td>
+<td>Định hướng Claude trong codebase</td>
+<td>Tech stack, kiến trúc, các thư mục chính</td>
+</tr>
+<tr>
+<td>Lệnh build &amp; test</td>
+<td>Để Claude chạy được quy trình của bạn</td>
+<td><code>npm test</code>, <code>cargo build</code>, <code>make deploy</code></td>
+</tr>
+<tr>
+<td>Quy ước code</td>
+<td>Áp phong cách của nhóm</td>
+<td>Đặt tên, import, cách xử lý lỗi</td>
+</tr>
+<tr>
+<td>Quy trình thường dùng</td>
+<td>Tránh làm lại</td>
+<td>Đặt tên nhánh, quy trình PR, các bước deploy</td>
+</tr>
+<tr>
+<td>Ghi chú công cụ &amp; MCP</td>
+<td>Kết nối Claude với môi trường của bạn</td>
+<td>Script nội bộ, ghi chú dùng <span class="tip" tabindex="0">MCP<span class="tip__box" role="tooltip">Model Context Protocol: một chuẩn cho phép Claude kết nối tới công cụ và dịch vụ bên ngoài</span></span> server</td>
+</tr>
+<tr>
+<td>Lưu ý &amp; cạm bẫy</td>
+<td>Tránh các lỗi đã biết</td>
+<td>File không được sửa, các điểm kỳ quặc, yêu cầu môi trường</td>
+</tr>
+</tbody>
+</table></div>
+<h2>File có thể nằm ở đâu</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Vị trí</th>
+<th>Phạm vi</th>
+<th>Dùng cho</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>./CLAUDE.md</code></td>
+<td>Dự án (chia sẻ)</td>
+<td>Chuẩn của nhóm, kiến trúc, lệnh build</td>
+</tr>
+<tr>
+<td><code>./.claude/CLAUDE.md</code></td>
+<td>Dự án (chia sẻ)</td>
+<td>Như trên, vị trí thay thế</td>
+</tr>
+<tr>
+<td><code>~/.claude/CLAUDE.md</code></td>
+<td>Cá nhân (mọi dự án)</td>
+<td>Sở thích của bạn trên mọi dự án</td>
+</tr>
+<tr>
+<td><code>./CLAUDE.local.md</code></td>
+<td>Cá nhân (dự án này)</td>
+<td>URL sandbox, dữ liệu test ưa dùng của bạn. <span class="tip" tabindex="0">Gitignore<span class="tip__box" role="tooltip">Tự động thêm vào .gitignore nên nó chỉ nằm cục bộ và không bao giờ bị commit lên git</span></span></td>
+</tr>
+<tr>
+<td><span class="tip" tabindex="0">Đường dẫn chính sách quản lý<span class="tip__box" role="tooltip">Đường dẫn cấp hệ thống do IT/DevOps quản lý. macOS: /Library/Application Support/ClaudeCode/CLAUDE.md, Linux: /etc/claude-code/CLAUDE.md, Windows: C:\Program Files\ClaudeCode\CLAUDE.md</span></span></td>
+<td>Toàn tổ chức</td>
+<td>Chính sách bảo mật, quy định tuân thủ của công ty</td>
+</tr>
+</tbody>
+</table></div>
+<p>Vị trí cụ thể hơn được ưu tiên hơn vị trí rộng hơn. Claude cũng phát hiện các file <code>CLAUDE.md</code> trong thư mục con và nạp chúng khi cần, lúc làm việc trong các thư mục đó.</p>
+<h2>Import file</h2>
+<p>Dùng cú pháp <code>@đường/dẫn/tới/file</code> để kéo thêm file vào bối cảnh:</p>
+<div class="code"><span class="code__lang">markdown</span><pre><code>Xem <span class="ni">@README</span>.md để biết tổng quan dự án.
+Quy trình Git: <span class="ni">@docs/git-instructions</span>.md
+</code></pre></div><ul>
+<li>Đường dẫn tương đối được tính từ file chứa lệnh import</li>
+<li>Import có thể lồng nhau tối đa 5 cấp</li>
+<li>Lần dùng đầu tiên trong một dự án sẽ hiện hộp thoại xin phép</li>
+<li>Rất tiện để kéo README, package.json hay hướng dẫn quy trình vào mà không phải chép lại nội dung</li>
+</ul>
+<h2>Viết chỉ dẫn hiệu quả</h2>
+<ul>
+<li><strong>Cụ thể</strong>: <span class="tip" tabindex="0">Dùng thụt lề 2 dấu cách<span class="tip__box" role="tooltip">Một chỉ dẫn cụ thể, kiểm chứng được mà Claude làm theo chính xác</span></span> thay vì <span class="tip" tabindex="0">Định dạng code cho đúng<span class="tip__box" role="tooltip">Quá mơ hồ để Claude làm theo nhất quán. Thế nào là 'cho đúng'?</span></span></li>
+<li><strong>Ngắn gọn</strong>: Nhắm dưới 200 dòng. File dài hơn sẽ <span class="tip" tabindex="0">làm giảm mức tuân thủ<span class="tip__box" role="tooltip">Claude càng phải theo dõi nhiều chỉ dẫn thì càng làm theo từng chỉ dẫn kém tin cậy hơn</span></span></li>
+<li><strong>Có cấu trúc</strong>: Dùng tiêu đề và gạch đầu dòng markdown. Claude đọc lướt cấu trúc như một người đọc</li>
+<li><strong>Tránh mâu thuẫn</strong>: Nếu hai chỉ dẫn trái nhau, Claude sẽ chọn đại một cái. Hãy rà soát định kỳ</li>
+<li><strong>Tách khi lớn</strong>: Dùng <span class="tip" tabindex="0">@ import<span class="tip__box" role="tooltip">Cú pháp @đường/dẫn/file mô tả ở trên, kéo file khác vào bối cảnh của CLAUDE.md</span></span> hoặc các file trong <code>.claude/rules/</code> để chia nhỏ chỉ dẫn dài</li>
+</ul>
+<h2>Mẹo</h2>
+<ul>
+<li>CLAUDE.md là <span class="tip" tabindex="0">bối cảnh, không phải cưỡng chế<span class="tip__box" role="tooltip">Claude đọc và cố gắng làm theo, nhưng không có bảo đảm tuyệt đối. Chỉ dẫn cụ thể, rõ ràng cho kết quả tốt nhất</span></span>. Chỉ dẫn cụ thể được tuân theo đáng tin cậy hơn chỉ dẫn mơ hồ</li>
+<li><code>/init</code> cũng dùng được với dự án có sẵn. Nó đề xuất cải tiến thay vì ghi đè</li>
+<li>Dùng <code>/clear</code> giữa các tác vụ không liên quan để xoá bối cảnh tích tụ mà vẫn giữ CLAUDE.md</li>
+<li>CLAUDE.md <span class="tip" tabindex="0">sống sót qua /compact<span class="tip__box" role="tooltip">Khi bạn chạy /compact, Claude đọc lại CLAUDE.md từ đĩa và chèn lại nguyên vẹn. Chỉ dẫn chỉ nói trong hội thoại sẽ mất, nhưng CLAUDE.md thì còn</span></span>. Nó được đọc lại từ đĩa và chèn lại nguyên vẹn</li>
+<li>Không bao giờ ghi secret, API key hay thông tin đăng nhập. Hãy coi nó như tài liệu công khai</li>
+<li>Bắt đầu đơn giản. Mở rộng dựa trên vướng mắc thật, không phải nhu cầu giả định</li>
+</ul>
+<h2>Đọc thêm</h2>
+<ul>
+<li><a href="https://code.claude.com/docs/en/memory#claude-md-files" target="_blank" rel="noopener">Tài liệu chính thức: Cách Claude ghi nhớ dự án của bạn</a></li>
+<li><a href="https://claude.com/blog/using-claude-md-files" target="_blank" rel="noopener">Blog: Dùng file CLAUDE.md</a></li>
+</ul>
+</div><details class="raw"><summary>Xem mã nguồn markdown</summary><div class="code"><span class="code__lang">markdown</span><pre><code><span class="gh"># CLAUDE.md</span>
+
+Một file markdown cung cấp cho Claude bối cảnh lâu dài về dự án của bạn. Nó được nạp tự động vào mọi phiên, không cần nhắc thủ công.
+
+<span class="gu">## Bắt đầu nhanh</span>
+
+<span class="k">1.</span> Chạy <span class="sb">`/init`</span> trong Claude Code. Nó phân tích codebase và tạo một <span class="sb">`CLAUDE.md`</span> khởi đầu
+<span class="k">2.</span> Xem lại và tinh chỉnh những gì nó tạo ra. Bổ sung những điều Claude không tự suy ra được
+<span class="k">3.</span> Commit vào git để cả nhóm dùng chung một bối cảnh
+<span class="k">4.</span> Cải tiến theo thời gian. Thêm chỉ dẫn mỗi khi bạn phát hiện điểm vướng
+
+<span class="gu">## Nên viết gì trong đó</span>
+
+| Mục | Mục đích | Ví dụ |
+|---|---|---|
+| Tổng quan dự án | Định hướng Claude trong codebase | Tech stack, kiến trúc, các thư mục chính |
+| Lệnh build &amp; test | Để Claude chạy được quy trình của bạn | <span class="sb">`npm test`</span>, <span class="sb">`cargo build`</span>, <span class="sb">`make deploy`</span> |
+| Quy ước code | Áp phong cách của nhóm | Đặt tên, import, cách xử lý lỗi |
+| Quy trình thường dùng | Tránh làm lại | Đặt tên nhánh, quy trình PR, các bước deploy |
+| Ghi chú công cụ &amp; MCP | Kết nối Claude với môi trường của bạn | Script nội bộ, ghi chú dùng [<span class="nt">MCP</span>](<span class="na">^Model Context Protocol: một chuẩn cho phép Claude kết nối tới công cụ và dịch vụ bên ngoài</span>) server |
+| Lưu ý &amp; cạm bẫy | Tránh các lỗi đã biết | File không được sửa, các điểm kỳ quặc, yêu cầu môi trường |
+
+<span class="gu">## File có thể nằm ở đâu</span>
+
+| Vị trí | Phạm vi | Dùng cho |
+|---|---|---|
+| <span class="sb">`./CLAUDE.md`</span> | Dự án (chia sẻ) | Chuẩn của nhóm, kiến trúc, lệnh build |
+| <span class="sb">`./.claude/CLAUDE.md`</span> | Dự án (chia sẻ) | Như trên, vị trí thay thế |
+| <span class="sb">`~/.claude/CLAUDE.md`</span> | Cá nhân (mọi dự án) | Sở thích của bạn trên mọi dự án |
+| <span class="sb">`./CLAUDE.local.md`</span> | Cá nhân (dự án này) | URL sandbox, dữ liệu test ưa dùng của bạn. [<span class="nt">Gitignore</span>](<span class="na">^Tự động thêm vào .gitignore nên nó chỉ nằm cục bộ và không bao giờ bị commit lên git</span>) |
+| [<span class="nt">Đường dẫn chính sách quản lý</span>](<span class="na">^Đường dẫn cấp hệ thống do IT/DevOps quản lý. macOS: /Library/Application Support/ClaudeCode/CLAUDE.md, Linux: /etc/claude-code/CLAUDE.md, Windows: C:\Program Files\ClaudeCode\CLAUDE.md</span>) | Toàn tổ chức | Chính sách bảo mật, quy định tuân thủ của công ty |
+
+Vị trí cụ thể hơn được ưu tiên hơn vị trí rộng hơn. Claude cũng phát hiện các file <span class="sb">`CLAUDE.md`</span> trong thư mục con và nạp chúng khi cần, lúc làm việc trong các thư mục đó.
+
+<span class="gu">## Import file</span>
+
+Dùng cú pháp <span class="sb">`@đường/dẫn/tới/file`</span> để kéo thêm file vào bối cảnh:
+
+<span class="sb">```markdown</span>
+Xem <span class="ni">@README</span>.md để biết tổng quan dự án.
+Quy trình Git: <span class="ni">@docs/git-instructions</span>.md
+<span class="sb">```</span>
+
+<span class="k">-</span><span class="w"> </span>Đường dẫn tương đối được tính từ file chứa lệnh import
+<span class="k">-</span><span class="w"> </span>Import có thể lồng nhau tối đa 5 cấp
+<span class="k">-</span><span class="w"> </span>Lần dùng đầu tiên trong một dự án sẽ hiện hộp thoại xin phép
+<span class="k">-</span><span class="w"> </span>Rất tiện để kéo README, package.json hay hướng dẫn quy trình vào mà không phải chép lại nội dung
+
+<span class="gu">## Viết chỉ dẫn hiệu quả</span>
+
+<span class="k">-</span><span class="w"> </span><span class="gs">**Cụ thể**</span>: [<span class="nt">Dùng thụt lề 2 dấu cách</span>](<span class="na">^Một chỉ dẫn cụ thể, kiểm chứng được mà Claude làm theo chính xác</span>) thay vì [<span class="nt">Định dạng code cho đúng</span>](<span class="na">^Quá mơ hồ để Claude làm theo nhất quán. Thế nào là 'cho đúng'?</span>)
+<span class="k">-</span><span class="w"> </span><span class="gs">**Ngắn gọn**</span>: Nhắm dưới 200 dòng. File dài hơn sẽ [<span class="nt">làm giảm mức tuân thủ</span>](<span class="na">^Claude càng phải theo dõi nhiều chỉ dẫn thì càng làm theo từng chỉ dẫn kém tin cậy hơn</span>)
+<span class="k">-</span><span class="w"> </span><span class="gs">**Có cấu trúc**</span>: Dùng tiêu đề và gạch đầu dòng markdown. Claude đọc lướt cấu trúc như một người đọc
+<span class="k">-</span><span class="w"> </span><span class="gs">**Tránh mâu thuẫn**</span>: Nếu hai chỉ dẫn trái nhau, Claude sẽ chọn đại một cái. Hãy rà soát định kỳ
+<span class="k">-</span><span class="w"> </span><span class="gs">**Tách khi lớn**</span>: Dùng [<span class="nt">@ import</span>](<span class="na">^Cú pháp @đường/dẫn/file mô tả ở trên, kéo file khác vào bối cảnh của CLAUDE.md</span>) hoặc các file trong <span class="sb">`.claude/rules/`</span> để chia nhỏ chỉ dẫn dài
+
+<span class="gu">## Mẹo</span>
+
+<span class="k">-</span><span class="w"> </span>CLAUDE.md là [<span class="nt">bối cảnh, không phải cưỡng chế</span>](<span class="na">^Claude đọc và cố gắng làm theo, nhưng không có bảo đảm tuyệt đối. Chỉ dẫn cụ thể, rõ ràng cho kết quả tốt nhất</span>). Chỉ dẫn cụ thể được tuân theo đáng tin cậy hơn chỉ dẫn mơ hồ
+<span class="k">-</span><span class="w"> </span><span class="sb">`/init`</span> cũng dùng được với dự án có sẵn. Nó đề xuất cải tiến thay vì ghi đè
+<span class="k">-</span><span class="w"> </span>Dùng <span class="sb">`/clear`</span> giữa các tác vụ không liên quan để xoá bối cảnh tích tụ mà vẫn giữ CLAUDE.md
+<span class="k">-</span><span class="w"> </span>CLAUDE.md [<span class="nt">sống sót qua /compact</span>](<span class="na">^Khi bạn chạy /compact, Claude đọc lại CLAUDE.md từ đĩa và chèn lại nguyên vẹn. Chỉ dẫn chỉ nói trong hội thoại sẽ mất, nhưng CLAUDE.md thì còn</span>). Nó được đọc lại từ đĩa và chèn lại nguyên vẹn
+<span class="k">-</span><span class="w"> </span>Không bao giờ ghi secret, API key hay thông tin đăng nhập. Hãy coi nó như tài liệu công khai
+<span class="k">-</span><span class="w"> </span>Bắt đầu đơn giản. Mở rộng dựa trên vướng mắc thật, không phải nhu cầu giả định
+
+<span class="gu">## Đọc thêm</span>
+
+<span class="k">-</span><span class="w"> </span>[<span class="nt">Tài liệu chính thức: Cách Claude ghi nhớ dự án của bạn</span>](<span class="na">https://code.claude.com/docs/en/memory#claude-md-files</span>)
+<span class="k">-</span><span class="w"> </span>[<span class="nt">Blog: Dùng file CLAUDE.md</span>](<span class="na">https://claude.com/blog/using-claude-md-files</span>)
+</code></pre></div></details></section><nav class="pager"><a class="pager__prev" href="src-index-ts.html"><small>← Trước</small>Điểm vào</a><a class="pager__next" href="mcp-json.html"><small>Tiếp →</small>Cấu hình MCP</a></nav></article>
+<footer class="foot">Bản dịch tiếng Việt, HTML tĩnh, của <a href="https://github.com/LukeRenton/explore-claude-code" target="_blank" rel="noopener">Explore Claude Code</a> · © 2026 Luke Renton · Giấy phép MIT</footer>
+</main>
+</div>
+</body>
+</html>

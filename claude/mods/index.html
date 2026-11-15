@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mods là gì? — Khám phá Claude Code</title>
+<meta name="description" content="Cách mod chạy JavaScript trong phiên để quan sát, viết lại hoặc chặn sự kiện và vẽ UI tuỳ chỉnh.">
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+<header class="titlebar">
+  <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+  <label for="nav-toggle" class="menu-btn" aria-label="Mở danh mục">☰</label>
+  <a class="titlebar__text" href="../../index.html">kham-pha-claude-code : my-project</a>
+  <a class="titlebar__link" href="https://www.exploreclaudecode.com/" target="_blank" rel="noopener">Bản gốc ↗</a>
+</header>
+<div class="shell">
+<nav class="sidebar" aria-label="Cây thư mục">
+  <div class="sidebar__head">my-project</div>
+  <ul class="tree">
+    <li class="leaf"><a href="../../index.html"><span class="ico ico--home"></span><span class="name">Chào mừng</span></a></li>
+    <li class="dir"><details open><summary><span class="ico ico--dir"></span><span class="name">.claude</span><span class="badge badge--config">config</span></summary><ul><li class="leaf"><a href="../settings.html" title="Cài đặt &amp; Quyền"><span class="ico ico--file"></span><span class="name">settings.json</span><span class="badge badge--config">config</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">rules</span><span class="badge badge--rules">rules</span></summary><ul><li class="leaf"><a href="../rules/index.html" title="Rules là gì?"><span class="ico ico--file"></span><span class="name">RULES.md</span><span class="badge badge--rules">rules</span></a></li><li class="leaf"><a href="../rules/my-rule.html" title="Khung mẫu file Rule"><span class="ico ico--file"></span><span class="name">my-rule.md</span><span class="badge badge--rules">rules</span></a></li></ul></details></li><li class="dir dep"><details><summary><span class="ico ico--dir"></span><span class="name">commands</span><span class="badge badge--commands">commands</span></summary><ul><li class="leaf"><a href="../commands/index.html" title="Commands (Lỗi thời)"><span class="ico ico--file"></span><span class="name">COMMANDS.md</span><span class="badge badge--commands">commands</span></a></li><li class="dir dep"><details><summary><span class="ico ico--dir"></span><span class="name">my-command</span><span class="badge badge--commands">commands</span></summary><ul><li class="leaf"><a href="../commands/my-command.html" title="Khung mẫu file Command"><span class="ico ico--file"></span><span class="name">my-command.md</span><span class="badge badge--commands">commands</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">skills</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../skills/index.html" title="Skills là gì?"><span class="ico ico--file"></span><span class="name">SKILLS.md</span><span class="badge badge--skill">skill</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-skill</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../skills/skill-md.html" title="SKILL.md - Định nghĩa Skill"><span class="ico ico--file"></span><span class="name">SKILL.md</span><span class="badge badge--skill">skill</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">scripts</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../skills/scripts.html" title="scripts/ - Mã thực thi"><span class="ico ico--file"></span><span class="name">helper.sh</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">references</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../skills/references.html" title="references/ - Tài liệu chi tiết"><span class="ico ico--file"></span><span class="name">REFERENCE.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">assets</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../skills/assets.html" title="assets/ - Tài nguyên tĩnh"><span class="ico ico--file"></span><span class="name">template.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">agents</span><span class="badge badge--agents">agents</span></summary><ul><li class="leaf"><a href="../agents/index.html" title="Tổng quan Agents"><span class="ico ico--file"></span><span class="name">AGENTS.md</span><span class="badge badge--agents">agents</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-agent</span><span class="badge badge--agents">agents</span></summary><ul><li class="leaf"><a href="../agents/my-agent.html" title="Khung mẫu file Agent"><span class="ico ico--file"></span><span class="name">my-agent.md</span><span class="badge badge--agents">agents</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">hooks</span><span class="badge badge--hooks">hooks</span></summary><ul><li class="leaf"><a href="../hooks/index.html" title="Tổng quan Hooks"><span class="ico ico--file"></span><span class="name">HOOKS.md</span><span class="badge badge--hooks">hooks</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-hook</span><span class="badge badge--hooks">hooks</span></summary><ul><li class="leaf"><a href="../hooks/my-hook.html" title="Khung mẫu Hook Script"><span class="ico ico--file"></span><span class="name">my-hook.sh</span><span class="badge badge--hooks">hooks</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">plugins</span><span class="badge badge--plugins">plugins</span></summary><ul><li class="leaf"><a href="../plugins/index.html" title="Plugins là gì?"><span class="ico ico--file"></span><span class="name">PLUGINS.md</span><span class="badge badge--plugins">plugins</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-plugin</span></summary><ul><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">.claude-plugin</span><span class="badge badge--plugins">plugins</span></summary><ul><li class="leaf"><a href="../plugins/plugin-json.html" title="Manifest của Plugin"><span class="ico ico--file"></span><span class="name">plugin.json</span><span class="badge badge--plugins">plugins</span></a></li></ul></details></li></ul></details></li><li class="leaf"><a href="../plugins/marketplaces.html" title="Plugin Marketplaces"><span class="ico ico--file"></span><span class="name">MARKETPLACES.md</span><span class="badge badge--marketplace">marketplace</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-marketplace</span></summary><ul><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">.claude-plugin</span><span class="badge badge--marketplace">marketplace</span></summary><ul><li class="leaf"><a href="../plugins/marketplace-json.html" title="Danh mục Marketplace"><span class="ico ico--file"></span><span class="name">marketplace.json</span><span class="badge badge--marketplace">marketplace</span></a></li></ul></details></li></ul></details></li></ul></details></li><li class="dir"><details open><summary><span class="ico ico--dir"></span><span class="name">mods</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf active"><a href="index.html" aria-current=page title="Mods là gì?"><span class="ico ico--file"></span><span class="name">MODS.md</span><span class="badge badge--mod">mod</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">my-mod</span></summary><ul><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">.claude-plugin</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="plugin-json.html" title="Manifest của Mod"><span class="ico ico--file"></span><span class="name">plugin.json</span><span class="badge badge--mod">mod</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">hooks</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="hooks-json.html" title="Danh sách module của Mod"><span class="ico ico--file"></span><span class="name">hooks.json</span><span class="badge badge--mod">mod</span></a></li><li class="leaf"><a href="my-mod.html" title="Bản thân Mod"><span class="ico ico--file"></span><span class="name">my-mod.mjs</span><span class="badge badge--mod">mod</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">types</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="types.html" title="Hợp đồng kiểu của Mod"><span class="ico ico--file"></span><span class="name">index.d.ts</span><span class="badge badge--mod">mod</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">tests</span><span class="badge badge--mod">mod</span></summary><ul><li class="leaf"><a href="tests.html" title="Test cho Mod"><span class="ico ico--file"></span><span class="name">my-mod.test.ts</span><span class="badge badge--mod">mod</span></a></li></ul></details></li></ul></details></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">src</span><span class="badge badge--code">code</span></summary><ul><li class="leaf"><a href="../../project/src-index-ts.html" title="Điểm vào"><span class="ico ico--file"></span><span class="name">index.ts</span><span class="badge badge--code">code</span></a></li></ul></details></li><li class="leaf"><a href="../../project/claude-md.html" title="Bộ nhớ dự án"><span class="ico ico--file"></span><span class="name">CLAUDE.md</span><span class="badge badge--memory">memory</span></a></li><li class="leaf"><a href="../../project/mcp-json.html" title="Cấu hình MCP"><span class="ico ico--file"></span><span class="name">.mcp.json</span><span class="badge badge--mcp">MCP</span></a></li><li class="sep" aria-hidden="true"></li><li class="dir"><details open><summary><span class="ico ico--dir"></span><span class="name">built-in</span><span class="badge badge--builtin">tích hợp</span></summary><ul><li class="leaf"><a href="../../built-in/index.html" title="Built-in là gì?"><span class="ico ico--file"></span><span class="name">BUILT-IN.md</span><span class="badge badge--builtin">tích hợp</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">modes</span><span class="badge badge--mode">chế độ</span></summary><ul><li class="leaf"><a href="../../built-in/modes/index.html" title="Tổng quan Chế độ"><span class="ico ico--file"></span><span class="name">MODES.md</span><span class="badge badge--mode">chế độ</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">permission-modes</span><span class="badge badge--mode">chế độ</span></summary><ul><li class="leaf"><a href="../../built-in/modes/permission-modes.html" title="Chế độ quyền"><span class="ico ico--file"></span><span class="name">permission-modes.md</span><span class="badge badge--mode">chế độ</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">plan-mode</span><span class="badge badge--mode">chế độ</span></summary><ul><li class="leaf"><a href="../../built-in/modes/plan-mode.html" title="Plan Mode"><span class="ico ico--file"></span><span class="name">plan-mode.md</span><span class="badge badge--mode">chế độ</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">auto-mode</span><span class="badge badge--mode">chế độ</span></summary><ul><li class="leaf"><a href="../../built-in/modes/auto-mode.html" title="Auto Mode"><span class="ico ico--file"></span><span class="name">auto-mode.md</span><span class="badge badge--mode">chế độ</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">auto-memory</span><span class="badge badge--memory">memory</span></summary><ul><li class="leaf"><a href="../../built-in/auto-memory.html" title="Auto Memory"><span class="ico ico--file"></span><span class="name">AUTO-MEMORY.md</span><span class="badge badge--memory">memory</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">context</span><span class="badge badge--context">context</span></summary><ul><li class="leaf"><a href="../../built-in/context/index.html" title="Context Window"><span class="ico ico--file"></span><span class="name">CONTEXT.md</span><span class="badge badge--context">context</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">thinking</span><span class="badge badge--context">context</span></summary><ul><li class="leaf"><a href="../../built-in/context/thinking.html" title="Extended Thinking"><span class="ico ico--file"></span><span class="name">thinking.md</span><span class="badge badge--context">context</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">keyboard</span><span class="badge badge--keyboard">bàn phím</span></summary><ul><li class="leaf"><a href="../../built-in/keyboard/index.html" title="Tổng quan Bàn phím"><span class="ico ico--file"></span><span class="name">KEYBOARD.md</span><span class="badge badge--keyboard">bàn phím</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">shortcuts</span><span class="badge badge--keyboard">bàn phím</span></summary><ul><li class="leaf"><a href="../../built-in/keyboard/shortcuts.html" title="Phím tắt"><span class="ico ico--file"></span><span class="name">shortcuts.md</span><span class="badge badge--keyboard">bàn phím</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">keybindings</span><span class="badge badge--keyboard">bàn phím</span></summary><ul><li class="leaf"><a href="../../built-in/keyboard/keybindings.html" title="Keybindings"><span class="ico ico--file"></span><span class="name">keybindings.md</span><span class="badge badge--keyboard">bàn phím</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">vim-mode</span><span class="badge badge--keyboard">bàn phím</span></summary><ul><li class="leaf"><a href="../../built-in/keyboard/vim-mode.html" title="Vim Mode"><span class="ico ico--file"></span><span class="name">vim-mode.md</span><span class="badge badge--keyboard">bàn phím</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">cli</span><span class="badge badge--terminal">CLI</span></summary><ul><li class="leaf"><a href="../../built-in/cli/index.html" title="Tổng quan CLI"><span class="ico ico--file"></span><span class="name">CLI.md</span><span class="badge badge--terminal">CLI</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">flags</span><span class="badge badge--terminal">CLI</span></summary><ul><li class="leaf"><a href="../../built-in/cli/flags.html" title="Cờ (Flags)"><span class="ico ico--file"></span><span class="name">flags.md</span><span class="badge badge--terminal">CLI</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">headless</span><span class="badge badge--terminal">CLI</span></summary><ul><li class="leaf"><a href="../../built-in/cli/headless.html" title="Headless Mode"><span class="ico ico--file"></span><span class="name">headless.md</span><span class="badge badge--terminal">CLI</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">bundled-skills</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/index.html" title="Tổng quan Bundled Skills"><span class="ico ico--file"></span><span class="name">BUNDLED-SKILLS.md</span><span class="badge badge--skill">skill</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">simplify</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/simplify.html" title="/simplify"><span class="ico ico--file"></span><span class="name">simplify.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">batch</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/batch.html" title="/batch"><span class="ico ico--file"></span><span class="name">batch.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">debug</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/debug.html" title="/debug"><span class="ico ico--file"></span><span class="name">debug.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">loop</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/loop.html" title="/loop"><span class="ico ico--file"></span><span class="name">loop.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">claude-api</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/claude-api.html" title="/claude-api"><span class="ico ico--file"></span><span class="name">claude-api.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">code-review</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/code-review.html" title="/code-review"><span class="ico ico--file"></span><span class="name">code-review.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">security-review</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/security-review.html" title="/security-review"><span class="ico ico--file"></span><span class="name">security-review.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">deep-research</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/deep-research.html" title="/deep-research"><span class="ico ico--file"></span><span class="name">deep-research.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">dataviz</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/dataviz.html" title="/dataviz"><span class="ico ico--file"></span><span class="name">dataviz.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">run</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/run.html" title="/run"><span class="ico ico--file"></span><span class="name">run.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">plugin-authoring</span><span class="badge badge--skill">skill</span></summary><ul><li class="leaf"><a href="../../built-in/bundled-skills/plugin-authoring.html" title="/plugin-authoring"><span class="ico ico--file"></span><span class="name">plugin-authoring.md</span><span class="badge badge--skill">skill</span></a></li></ul></details></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">commands</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/index.html" title="Tổng quan Lệnh tích hợp"><span class="ico ico--file"></span><span class="name">BUILT-IN-COMMANDS.md</span><span class="badge badge--cli">lệnh slash</span></a></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">btw</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/btw.html" title="/btw"><span class="ico ico--file"></span><span class="name">btw.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">compact</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/compact.html" title="/compact"><span class="ico ico--file"></span><span class="name">compact.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">diff</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/diff.html" title="/diff"><span class="ico ico--file"></span><span class="name">diff.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">init</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/init.html" title="/init"><span class="ico ico--file"></span><span class="name">init.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">rewind</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/rewind.html" title="/rewind"><span class="ico ico--file"></span><span class="name">rewind.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">resume</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/resume.html" title="/resume"><span class="ico ico--file"></span><span class="name">resume.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">permissions</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/permissions.html" title="/permissions"><span class="ico ico--file"></span><span class="name">permissions.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li><li class="dir"><details><summary><span class="ico ico--dir"></span><span class="name">model</span><span class="badge badge--cli">lệnh slash</span></summary><ul><li class="leaf"><a href="../../built-in/commands/model.html" title="/model"><span class="ico ico--file"></span><span class="name">model.md</span><span class="badge badge--cli">lệnh slash</span></a></li></ul></details></li></ul></details></li></ul></details></li>
+  </ul>
+</nav>
+<label for="nav-toggle" class="backdrop" aria-hidden="true"></label>
+<main class="main"><article class="doc"><div class="crumbs">my-project <span>/</span> .claude <span>/</span> mods <span>/</span> MODS.md</div><span class="badge badge--mod badge--lg">mod</span><h1 class="doc__title">Mods là gì?</h1><p class="doc__desc">Cách mod chạy JavaScript trong phiên để quan sát, viết lại hoặc chặn sự kiện và vẽ UI tuỳ chỉnh.</p><div class="related"><div class="related__title">File liên quan</div><a href="plugin-json.html">.claude/mods/my-mod/.claude-plugin/plugin.json</a><a href="hooks-json.html">.claude/mods/my-mod/hooks/hooks.json</a><a href="my-mod.html">.claude/mods/my-mod/hooks/my-mod.mjs</a><a href="types.html">.claude/mods/my-mod/types/index.d.ts</a><a href="tests.html">.claude/mods/my-mod/tests/my-mod.test.ts</a></div><section class="file"><div class="file__bar"><span>.claude/mods/MODS.md</span></div><div class="md"><h1>Mods</h1>
+<p>Mod là một file JavaScript hoặc TypeScript nhỏ chạy bên trong phiên Claude Code của bạn. Mod có thể theo dõi việc Claude làm, thay đổi nó trước khi xảy ra, hoặc vẽ UI tuỳ chỉnh trong terminal hay tab Code của desktop app: một dải phía trên ô prompt, một pane gắn cạnh, một status line, hoặc một toast.</p>
+<p>Mods cần Claude Code <strong>2.1.287 trở lên</strong>, phiên bản mà chúng được bật mặc định.</p>
+<h2>Bắt đầu nhanh</h2>
+<p>Cách nhanh nhất để có một mod là mô tả nó:</p>
+<div class="code"><pre><code>&gt; tạo một mod hiển thị context window đang đầy bao nhiêu, ngay phía trên ô prompt
+</code></pre></div><p>Claude Code dùng skill có sẵn <span class="tip" tabindex="0">/plugin-authoring<span class="tip__box" role="tooltip">Một skill tích hợp viết mod dưới dạng plugin nạp nóng. Xem built-in/bundled-skills</span></span> để viết nó, kể cả phần khai báo kiểu, và nạp thẳng vào phiên của bạn. Để tự viết tay:</p>
+<ol>
+<li>Tạo thư mục plugin với <code>.claude-plugin/plugin.json</code></li>
+<li>Thêm <code>hooks/hooks.json</code> liệt kê các file module</li>
+<li>Viết module: export hàm <code>register(on)</code></li>
+<li>Nạp nó: <code>claude --plugin-dir ./my-mod</code></li>
+</ol>
+<p>Sửa file và phiên đang chạy sẽ nhận thay đổi. Không cần khởi động lại.</p>
+<h2>Mods vs. Hooks</h2>
+<p>Mods nằm cạnh <span class="tip" tabindex="0">shell hook<span class="tip__box" role="tooltip">Script trong settings.json chạy theo từng sự kiện và trao đổi JSON qua stdin/stdout. Xem mục hooks</span></span>, và khác biệt giữa chúng là quan trọng:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th></th>
+<th>Shell hooks</th>
+<th>Mods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Viết bằng</td>
+<td>Ngôn ngữ bất kỳ, chạy như một tiến trình</td>
+<td>JavaScript hoặc TypeScript</td>
+</tr>
+<tr>
+<td>Vòng đời</td>
+<td>Tiến trình mới cho mỗi sự kiện</td>
+<td>Nạp một lần, sống suốt phiên</td>
+</tr>
+<tr>
+<td>Giao tiếp với Claude Code qua</td>
+<td>JSON trên stdin/stdout, mã thoát</td>
+<td>Trực tiếp qua API <code>$</code></td>
+</tr>
+<tr>
+<td>Giữ trạng thái</td>
+<td>Không (tự ghi ra đĩa)</td>
+<td>Có, với <code>$.state</code></td>
+</tr>
+<tr>
+<td>Vẽ được UI</td>
+<td>Không</td>
+<td>Có: band, pane, status line, toast</td>
+</tr>
+<tr>
+<td>Cấu hình trong</td>
+<td><code>settings.json</code></td>
+<td><code>hooks/hooks.json</code> của plugin</td>
+</tr>
+</tbody>
+</table></div>
+<p>Dùng shell hook cho cổng kiểm tra hay formatter nhanh. Chọn mod khi bạn cần nhớ giữa các sự kiện, UI sống, hoặc kiểm soát chặt hơn.</p>
+<h2>Mod hoạt động thế nào</h2>
+<p>Mỗi module export <code>register(on)</code>. Bên trong, bạn gọi <code>on(event, matcher?, hook)</code> để gắn một hook:</p>
+<div class="code"><span class="code__lang">javascript</span><pre><code><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">register</span><span class="p">(</span><span class="nx">on</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">on</span><span class="p">(</span><span class="s2">"tool.call"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">tool</span><span class="o">:</span><span class="w"> </span><span class="s2">"Bash"</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">$</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">next</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div><div class="tbl"><table>
+<thead>
+<tr>
+<th>Tham số</th>
+<th>Là gì</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$</code></td>
+<td>API của mods: phiên, trạng thái, UI, file, tiến trình, HTTP và nhiều hơn nữa</td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td>Sự kiện: lời gọi công cụ, prompt, component đang được vẽ</td>
+</tr>
+<tr>
+<td><code>next</code></td>
+<td>Chuyển sự kiện xuống mắt xích tiếp theo</td>
+</tr>
+</tbody>
+</table></div>
+<p>Hooks tạo thành chuỗi, giống <span class="tip" tabindex="0">middleware<span class="tip__box" role="tooltip">Đoạn code nằm giữa một request và handler của nó, có thể kiểm tra, sửa đổi hoặc cắt ngang</span></span>. Hook của bạn chạy, <code>next(e)</code> chuyển sự kiện cho plugin kế tiếp, và ở đáy chuỗi Claude Code làm điều nó vốn sẽ làm. Điều đó cho bạn ba nước đi:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Nước đi</th>
+<th>Code</th>
+<th>Tác dụng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Quan sát</strong></td>
+<td><code>const r = await next(e); return r</code></td>
+<td>Theo dõi mà không thay đổi gì</td>
+</tr>
+<tr>
+<td><strong>Viết lại</strong></td>
+<td><code>return next({ ...e, command: safer })</code></td>
+<td>Đổi thứ mà mọi mắt xích phía sau nhìn thấy</td>
+</tr>
+<tr>
+<td><strong>Trả lời</strong></td>
+<td><code>return { deny: &quot;lý do&quot; }</code></td>
+<td>Bỏ qua <code>next</code> và tự phản hồi</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Các sự kiện hook</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Sự kiện</th>
+<th>Khi nào phát ra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>session.start</code> / <code>session.end</code></td>
+<td>Phiên bắt đầu hoặc kết thúc</td>
+</tr>
+<tr>
+<td><code>prompt.submit</code></td>
+<td>Bạn gửi prompt</td>
+</tr>
+<tr>
+<td><code>turn.start</code> / <code>turn.complete</code></td>
+<td>Claude bắt đầu hoặc kết thúc một lượt</td>
+</tr>
+<tr>
+<td><code>tool.call</code></td>
+<td>Claude gọi công cụ (khớp bằng <code>{ tool: &quot;Bash&quot; }</code>)</td>
+</tr>
+<tr>
+<td><code>command.run</code></td>
+<td>Một lệnh slash chạy (khớp bằng <code>{ command: &quot;name&quot; }</code>)</td>
+</tr>
+<tr>
+<td><code>ui.render</code></td>
+<td>Một component UI được vẽ (khớp bằng <code>{ component: &quot;AbovePrompt&quot; }</code>)</td>
+</tr>
+</tbody>
+</table></div>
+<h2>API <code>$</code></h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Namespace</th>
+<th>Dùng cho</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$.session</code></td>
+<td><code>usage()</code> để lấy số liệu context và token, <code>cwd()</code></td>
+</tr>
+<tr>
+<td><code>$.state</code></td>
+<td><code>get</code> / <code>set</code> các giá trị có tên, sống sót qua hot reload</td>
+</tr>
+<tr>
+<td><code>$.ui</code></td>
+<td><code>resolve(e)</code> để lấy phần tử UI, <code>open()</code> một pane, <code>status()</code>, <code>toast()</code></td>
+</tr>
+<tr>
+<td><code>$.command</code></td>
+<td><code>register()</code> lệnh slash của riêng bạn, <code>list()</code> lệnh sẵn có</td>
+</tr>
+<tr>
+<td><code>$.process</code></td>
+<td><code>run(argv)</code> một chương trình, luôn truyền dạng mảng tham số</td>
+</tr>
+<tr>
+<td><code>$.fs</code>, <code>$.http</code>, <code>$.tool</code>, <code>$.clock</code></td>
+<td>File, request web, công cụ và bộ hẹn giờ</td>
+</tr>
+</tbody>
+</table></div>
+<p>Mods chạy trong <span class="tip" tabindex="0">sandbox<span class="tip__box" role="tooltip">Môi trường chạy cô lập không có DOM và không có Node.js. Mọi tác động ra ngoài đều đi qua $, nên Claude Code thấy và kiểm soát được</span></span>. Không có Node.js và không có DOM. Mọi thứ chạm tới thế giới bên ngoài đều đi qua <code>$</code>.</p>
+<h2>Bề mặt UI</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bề mặt</th>
+<th>Hiện ở đâu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AbovePrompt</strong></td>
+<td>Một dải ngay phía trên ô nhập</td>
+</tr>
+<tr>
+<td><strong>Pane</strong></td>
+<td>Bảng gắn bên cạnh, tự thích ứng với độ rộng terminal</td>
+</tr>
+<tr>
+<td><strong>Status line</strong></td>
+<td>Dòng trạng thái ở dưới cùng</td>
+</tr>
+<tr>
+<td><strong>Toast</strong></td>
+<td>Thông báo ngắn hạn</td>
+</tr>
+</tbody>
+</table></div>
+<p>Gọi <code>$.ui.resolve(e)</code> bên trong hook <code>ui.render</code> để lấy các phần tử mà bề mặt đó hỗ trợ, như <code>Box</code> và <code>Text</code>. <code>e.props</code> của sự kiện cho biết không gian bạn có: <code>bodyColumns</code> (độ rộng khả dụng), <code>isWorking</code> (Claude đang bận), và <code>hasSurvey</code> (một khảo sát đã chiếm chỗ này, nên hãy nhường).</p>
+<h2>Trạng thái và Hot Reload</h2>
+<p>Trong khi bạn phát triển, thư mục mod được theo dõi và thay đổi được nạp lại vào phiên đang chạy. Biến cấp module sẽ <strong>bị reset</strong> sau mỗi lần nạp lại. Thứ gì cần tồn tại thì đặt vào <code>$.state</code>:</p>
+<div class="code"><span class="code__lang">javascript</span><pre><code><span class="kd">const</span><span class="w"> </span><span class="nx">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">plugin</span><span class="o">:</span><span class="w"> </span><span class="s2">"my-mod"</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s2">"blocked"</span><span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">$</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">counter</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">$</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">counter</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+</code></pre></div><p>Đọc state bên trong hook <code>ui.render</code> sẽ đăng ký lần vẽ đó theo dõi nó, nên UI tự vẽ lại mỗi khi giá trị thay đổi. Khai báo mỗi khoá state trong <code>types/index.d.ts</code> để kiểu khớp nhau.</p>
+<h2>Cấu trúc mod</h2>
+<div class="code"><pre><code>my-mod/
+  .claude-plugin/
+    plugin.json          # Manifest, trỏ tới khai báo kiểu
+  hooks/
+    hooks.json           # Liệt kê các file module cần nạp
+    my-mod.mjs           # Bản thân mod
+  types/
+    index.d.ts           # Khai báo các khoá $.state
+  tests/
+    my-mod.test.ts       # Test, chạy bằng claude plugin test
+</code></pre></div><p>Mod là một <span class="tip" tabindex="0">plugin<span class="tip__box" role="tooltip">Thư mục có manifest .claude-plugin/plugin.json. Xem mục plugins</span></span> với function hook, nên nó được phát hành giống như plugin.</p>
+<h2>Kiểm tra, Test, Chia sẻ</h2>
+<div class="code"><span class="code__lang">bash</span><pre><code>claude<span class="w"> </span>plugin<span class="w"> </span>validate<span class="w"> </span>./my-mod<span class="w">    </span><span class="c1"># manifest, hợp đồng kiểu, các hook đã khai báo</span>
+claude<span class="w"> </span>plugin<span class="w"> </span><span class="nb">test</span><span class="w"> </span>./my-mod<span class="w">        </span><span class="c1"># chạy tests/*.test.ts</span>
+</code></pre></div><p>Để chia sẻ, liệt kê mod trong một <span class="tip" tabindex="0">marketplace<span class="tip__box" role="tooltip">Danh mục liệt kê plugin và nơi tải chúng. Xem MARKETPLACES.md</span></span> và đẩy lên GitHub. Người khác cài nó như mọi plugin:</p>
+<div class="code"><pre><code>/plugin marketplace add your-org/my-mods
+/plugin install my-mod@my-mods
+/reload-plugins
+</code></pre></div><p>Để tiếp cận rộng hơn, gửi nó lên thư mục chính thức tại <a href="https://claude.ai/directory/manage" target="_blank" rel="noopener">claude.ai/directory/manage</a>.</p>
+<h2>Mẹo</h2>
+<ul>
+<li>Mỗi hook có <strong>10 giây thời gian riêng cho mỗi lần gọi</strong>. Thời gian chờ bên trong một lời gọi <code>$</code> không bị tính</li>
+<li>Truyền tham số tiến trình dạng mảng: <code>$.process.run([&quot;git&quot;, &quot;status&quot;])</code>. Không có chuỗi shell nghĩa là không có injection</li>
+<li>Khi mở pane, kiểm tra <code>opened.isPlaced</code>. Terminal hẹp có thể không đủ chỗ, nên hãy vẽ phương án dự phòng trong band</li>
+<li>Mod của bạn thấy mọi sự kiện, nhưng mod khác cũng thấy. Bạn có thể trả lời hoặc từ chối sự kiện, nhưng không giấu được nó khỏi phần còn lại của chuỗi</li>
+<li>Đừng làm việc nặng trong <code>ui.render</code>. Tính toán trong hook sự kiện, lưu kết quả vào <code>$.state</code>, và chỉ đọc nó khi vẽ</li>
+</ul>
+<h2>Đọc thêm</h2>
+<ul>
+<li><a href="https://claude.dev/blog/getting-started-with-claude-code-mods/" target="_blank" rel="noopener">Bắt đầu với mod của Claude Code</a></li>
+<li><a href="https://code.claude.com/docs/en/plugins" target="_blank" rel="noopener">Tài liệu Plugins</a></li>
+</ul>
+</div><details class="raw"><summary>Xem mã nguồn markdown</summary><div class="code"><span class="code__lang">markdown</span><pre><code><span class="gh"># Mods</span>
+
+Mod là một file JavaScript hoặc TypeScript nhỏ chạy bên trong phiên Claude Code của bạn. Mod có thể theo dõi việc Claude làm, thay đổi nó trước khi xảy ra, hoặc vẽ UI tuỳ chỉnh trong terminal hay tab Code của desktop app: một dải phía trên ô prompt, một pane gắn cạnh, một status line, hoặc một toast.
+
+Mods cần Claude Code <span class="gs">**2.1.287 trở lên**</span>, phiên bản mà chúng được bật mặc định.
+
+<span class="gu">## Bắt đầu nhanh</span>
+
+Cách nhanh nhất để có một mod là mô tả nó:
+
+<span class="sb">```</span>
+<span class="sb">&gt; tạo một mod hiển thị context window đang đầy bao nhiêu, ngay phía trên ô prompt</span>
+<span class="sb">```</span>
+
+Claude Code dùng skill có sẵn [<span class="nt">/plugin-authoring</span>](<span class="na">^Một skill tích hợp viết mod dưới dạng plugin nạp nóng. Xem built-in/bundled-skills</span>) để viết nó, kể cả phần khai báo kiểu, và nạp thẳng vào phiên của bạn. Để tự viết tay:
+
+<span class="k">1.</span> Tạo thư mục plugin với <span class="sb">`.claude-plugin/plugin.json`</span>
+<span class="k">2.</span> Thêm <span class="sb">`hooks/hooks.json`</span> liệt kê các file module
+<span class="k">3.</span> Viết module: export hàm <span class="sb">`register(on)`</span>
+<span class="k">4.</span> Nạp nó: <span class="sb">`claude --plugin-dir ./my-mod`</span>
+
+Sửa file và phiên đang chạy sẽ nhận thay đổi. Không cần khởi động lại.
+
+<span class="gu">## Mods vs. Hooks</span>
+
+Mods nằm cạnh [<span class="nt">shell hook</span>](<span class="na">^Script trong settings.json chạy theo từng sự kiện và trao đổi JSON qua stdin/stdout. Xem mục hooks</span>), và khác biệt giữa chúng là quan trọng:
+
+| | Shell hooks | Mods |
+|---|---|---|
+| Viết bằng | Ngôn ngữ bất kỳ, chạy như một tiến trình | JavaScript hoặc TypeScript |
+| Vòng đời | Tiến trình mới cho mỗi sự kiện | Nạp một lần, sống suốt phiên |
+| Giao tiếp với Claude Code qua | JSON trên stdin/stdout, mã thoát | Trực tiếp qua API <span class="sb">`$`</span> |
+| Giữ trạng thái | Không (tự ghi ra đĩa) | Có, với <span class="sb">`$.state`</span> |
+| Vẽ được UI | Không | Có: band, pane, status line, toast |
+| Cấu hình trong | <span class="sb">`settings.json`</span> | <span class="sb">`hooks/hooks.json`</span> của plugin |
+
+Dùng shell hook cho cổng kiểm tra hay formatter nhanh. Chọn mod khi bạn cần nhớ giữa các sự kiện, UI sống, hoặc kiểm soát chặt hơn.
+
+<span class="gu">## Mod hoạt động thế nào</span>
+
+Mỗi module export <span class="sb">`register(on)`</span>. Bên trong, bạn gọi <span class="sb">`on(event, matcher?, hook)`</span> để gắn một hook:
+
+<span class="sb">```javascript</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">register</span><span class="p">(</span><span class="nx">on</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">on</span><span class="p">(</span><span class="s2">"tool.call"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">tool</span><span class="o">:</span><span class="w"> </span><span class="s2">"Bash"</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">$</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">next</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+<span class="sb">```</span>
+
+| Tham số | Là gì |
+|---|---|
+| <span class="sb">`$`</span> | API của mods: phiên, trạng thái, UI, file, tiến trình, HTTP và nhiều hơn nữa |
+| <span class="sb">`e`</span> | Sự kiện: lời gọi công cụ, prompt, component đang được vẽ |
+| <span class="sb">`next`</span> | Chuyển sự kiện xuống mắt xích tiếp theo |
+
+Hooks tạo thành chuỗi, giống [<span class="nt">middleware</span>](<span class="na">^Đoạn code nằm giữa một request và handler của nó, có thể kiểm tra, sửa đổi hoặc cắt ngang</span>). Hook của bạn chạy, <span class="sb">`next(e)`</span> chuyển sự kiện cho plugin kế tiếp, và ở đáy chuỗi Claude Code làm điều nó vốn sẽ làm. Điều đó cho bạn ba nước đi:
+
+| Nước đi | Code | Tác dụng |
+|---|---|---|
+| <span class="gs">**Quan sát**</span> | <span class="sb">`const r = await next(e); return r`</span> | Theo dõi mà không thay đổi gì |
+| <span class="gs">**Viết lại**</span> | <span class="sb">`return next({ ...e, command: safer })`</span> | Đổi thứ mà mọi mắt xích phía sau nhìn thấy |
+| <span class="gs">**Trả lời**</span> | <span class="sb">`return { deny: "lý do" }`</span> | Bỏ qua <span class="sb">`next`</span> và tự phản hồi |
+
+<span class="gu">## Các sự kiện hook</span>
+
+| Sự kiện | Khi nào phát ra |
+|---|---|
+| <span class="sb">`session.start`</span> / <span class="sb">`session.end`</span> | Phiên bắt đầu hoặc kết thúc |
+| <span class="sb">`prompt.submit`</span> | Bạn gửi prompt |
+| <span class="sb">`turn.start`</span> / <span class="sb">`turn.complete`</span> | Claude bắt đầu hoặc kết thúc một lượt |
+| <span class="sb">`tool.call`</span> | Claude gọi công cụ (khớp bằng <span class="sb">`{ tool: "Bash" }`</span>) |
+| <span class="sb">`command.run`</span> | Một lệnh slash chạy (khớp bằng <span class="sb">`{ command: "name" }`</span>) |
+| <span class="sb">`ui.render`</span> | Một component UI được vẽ (khớp bằng <span class="sb">`{ component: "AbovePrompt" }`</span>) |
+
+<span class="gu">## API `$`</span>
+
+| Namespace | Dùng cho |
+|---|---|
+| <span class="sb">`$.session`</span> | <span class="sb">`usage()`</span> để lấy số liệu context và token, <span class="sb">`cwd()`</span> |
+| <span class="sb">`$.state`</span> | <span class="sb">`get`</span> / <span class="sb">`set`</span> các giá trị có tên, sống sót qua hot reload |
+| <span class="sb">`$.ui`</span> | <span class="sb">`resolve(e)`</span> để lấy phần tử UI, <span class="sb">`open()`</span> một pane, <span class="sb">`status()`</span>, <span class="sb">`toast()`</span> |
+| <span class="sb">`$.command`</span> | <span class="sb">`register()`</span> lệnh slash của riêng bạn, <span class="sb">`list()`</span> lệnh sẵn có |
+| <span class="sb">`$.process`</span> | <span class="sb">`run(argv)`</span> một chương trình, luôn truyền dạng mảng tham số |
+| <span class="sb">`$.fs`</span>, <span class="sb">`$.http`</span>, <span class="sb">`$.tool`</span>, <span class="sb">`$.clock`</span> | File, request web, công cụ và bộ hẹn giờ |
+
+Mods chạy trong [<span class="nt">sandbox</span>](<span class="na">^Môi trường chạy cô lập không có DOM và không có Node.js. Mọi tác động ra ngoài đều đi qua $, nên Claude Code thấy và kiểm soát được</span>). Không có Node.js và không có DOM. Mọi thứ chạm tới thế giới bên ngoài đều đi qua <span class="sb">`$`</span>.
+
+<span class="gu">## Bề mặt UI</span>
+
+| Bề mặt | Hiện ở đâu |
+|---|---|
+| <span class="gs">**AbovePrompt**</span> | Một dải ngay phía trên ô nhập |
+| <span class="gs">**Pane**</span> | Bảng gắn bên cạnh, tự thích ứng với độ rộng terminal |
+| <span class="gs">**Status line**</span> | Dòng trạng thái ở dưới cùng |
+| <span class="gs">**Toast**</span> | Thông báo ngắn hạn |
+
+Gọi <span class="sb">`$.ui.resolve(e)`</span> bên trong hook <span class="sb">`ui.render`</span> để lấy các phần tử mà bề mặt đó hỗ trợ, như <span class="sb">`Box`</span> và <span class="sb">`Text`</span>. <span class="sb">`e.props`</span> của sự kiện cho biết không gian bạn có: <span class="sb">`bodyColumns`</span> (độ rộng khả dụng), <span class="sb">`isWorking`</span> (Claude đang bận), và <span class="sb">`hasSurvey`</span> (một khảo sát đã chiếm chỗ này, nên hãy nhường).
+
+<span class="gu">## Trạng thái và Hot Reload</span>
+
+Trong khi bạn phát triển, thư mục mod được theo dõi và thay đổi được nạp lại vào phiên đang chạy. Biến cấp module sẽ <span class="gs">**bị reset**</span> sau mỗi lần nạp lại. Thứ gì cần tồn tại thì đặt vào <span class="sb">`$.state`</span>:
+
+<span class="sb">```javascript</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">plugin</span><span class="o">:</span><span class="w"> </span><span class="s2">"my-mod"</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s2">"blocked"</span><span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">$</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">counter</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">$</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">counter</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="sb">```</span>
+
+Đọc state bên trong hook <span class="sb">`ui.render`</span> sẽ đăng ký lần vẽ đó theo dõi nó, nên UI tự vẽ lại mỗi khi giá trị thay đổi. Khai báo mỗi khoá state trong <span class="sb">`types/index.d.ts`</span> để kiểu khớp nhau.
+
+<span class="gu">## Cấu trúc mod</span>
+
+<span class="sb">```</span>
+<span class="sb">my-mod/</span>
+<span class="sb">  .claude-plugin/</span>
+<span class="sb">    plugin.json          # Manifest, trỏ tới khai báo kiểu</span>
+<span class="sb">  hooks/</span>
+<span class="sb">    hooks.json           # Liệt kê các file module cần nạp</span>
+<span class="sb">    my-mod.mjs           # Bản thân mod</span>
+<span class="sb">  types/</span>
+<span class="sb">    index.d.ts           # Khai báo các khoá $.state</span>
+<span class="sb">  tests/</span>
+<span class="sb">    my-mod.test.ts       # Test, chạy bằng claude plugin test</span>
+<span class="sb">```</span>
+
+Mod là một [<span class="nt">plugin</span>](<span class="na">^Thư mục có manifest .claude-plugin/plugin.json. Xem mục plugins</span>) với function hook, nên nó được phát hành giống như plugin.
+
+<span class="gu">## Kiểm tra, Test, Chia sẻ</span>
+
+<span class="sb">```bash</span>
+claude<span class="w"> </span>plugin<span class="w"> </span>validate<span class="w"> </span>./my-mod<span class="w">    </span><span class="c1"># manifest, hợp đồng kiểu, các hook đã khai báo</span>
+claude<span class="w"> </span>plugin<span class="w"> </span><span class="nb">test</span><span class="w"> </span>./my-mod<span class="w">        </span><span class="c1"># chạy tests/*.test.ts</span>
+<span class="sb">```</span>
+
+Để chia sẻ, liệt kê mod trong một [<span class="nt">marketplace</span>](<span class="na">^Danh mục liệt kê plugin và nơi tải chúng. Xem MARKETPLACES.md</span>) và đẩy lên GitHub. Người khác cài nó như mọi plugin:
+
+<span class="sb">```</span>
+<span class="sb">/plugin marketplace add your-org/my-mods</span>
+<span class="sb">/plugin install my-mod@my-mods</span>
+<span class="sb">/reload-plugins</span>
+<span class="sb">```</span>
+
+Để tiếp cận rộng hơn, gửi nó lên thư mục chính thức tại [<span class="nt">claude.ai/directory/manage</span>](<span class="na">https://claude.ai/directory/manage</span>).
+
+<span class="gu">## Mẹo</span>
+
+<span class="k">-</span><span class="w"> </span>Mỗi hook có <span class="gs">**10 giây thời gian riêng cho mỗi lần gọi**</span>. Thời gian chờ bên trong một lời gọi <span class="sb">`$`</span> không bị tính
+<span class="k">-</span><span class="w"> </span>Truyền tham số tiến trình dạng mảng: <span class="sb">`$.process.run(["git", "status"])`</span>. Không có chuỗi shell nghĩa là không có injection
+<span class="k">-</span><span class="w"> </span>Khi mở pane, kiểm tra <span class="sb">`opened.isPlaced`</span>. Terminal hẹp có thể không đủ chỗ, nên hãy vẽ phương án dự phòng trong band
+<span class="k">-</span><span class="w"> </span>Mod của bạn thấy mọi sự kiện, nhưng mod khác cũng thấy. Bạn có thể trả lời hoặc từ chối sự kiện, nhưng không giấu được nó khỏi phần còn lại của chuỗi
+<span class="k">-</span><span class="w"> </span>Đừng làm việc nặng trong <span class="sb">`ui.render`</span>. Tính toán trong hook sự kiện, lưu kết quả vào <span class="sb">`$.state`</span>, và chỉ đọc nó khi vẽ
+
+<span class="gu">## Đọc thêm</span>
+
+<span class="k">-</span><span class="w"> </span>[<span class="nt">Bắt đầu với mod của Claude Code</span>](<span class="na">https://claude.dev/blog/getting-started-with-claude-code-mods/</span>)
+<span class="k">-</span><span class="w"> </span>[<span class="nt">Tài liệu Plugins</span>](<span class="na">https://code.claude.com/docs/en/plugins</span>)
+</code></pre></div></details></section><nav class="pager"><a class="pager__prev" href="../plugins/marketplace-json.html"><small>← Trước</small>Danh mục Marketplace</a><a class="pager__next" href="plugin-json.html"><small>Tiếp →</small>Manifest của Mod</a></nav></article>
+<footer class="foot">Bản dịch tiếng Việt, HTML tĩnh, của <a href="https://github.com/LukeRenton/explore-claude-code" target="_blank" rel="noopener">Explore Claude Code</a> · © 2026 Luke Renton · Giấy phép MIT</footer>
+</main>
+</div>
+</body>
+</html>
